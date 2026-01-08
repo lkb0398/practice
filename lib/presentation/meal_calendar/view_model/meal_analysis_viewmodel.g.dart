@@ -1,0 +1,171 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'meal_analysis_viewmodel.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(MealAnalysisViewModel)
+const mealAnalysisViewModelProvider = MealAnalysisViewModelProvider._();
+
+final class MealAnalysisViewModelProvider
+    extends $NotifierProvider<MealAnalysisViewModel, void> {
+  const MealAnalysisViewModelProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'mealAnalysisViewModelProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$mealAnalysisViewModelHash();
+
+  @$internal
+  @override
+  MealAnalysisViewModel create() => MealAnalysisViewModel();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(void value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<void>(value),
+    );
+  }
+}
+
+String _$mealAnalysisViewModelHash() =>
+    r'23c1c7e432f3f2cfc5beaf607d85efad3e840532';
+
+abstract class _$MealAnalysisViewModel extends $Notifier<void> {
+  void build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    build();
+    final ref = this.ref as $Ref<void, void>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<void, void>,
+              void,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, null);
+  }
+}
+
+/// 오늘 분석 횟수 Provider (State로 관리하도록)
+/// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+
+@ProviderFor(TodayAnalysisCount)
+const todayAnalysisCountProvider = TodayAnalysisCountFamily._();
+
+/// 오늘 분석 횟수 Provider (State로 관리하도록)
+/// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+final class TodayAnalysisCountProvider
+    extends $AsyncNotifierProvider<TodayAnalysisCount, int> {
+  /// 오늘 분석 횟수 Provider (State로 관리하도록)
+  /// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+  const TodayAnalysisCountProvider._({
+    required TodayAnalysisCountFamily super.from,
+    required String super.argument,
+  }) : super(
+         retry: null,
+         name: r'todayAnalysisCountProvider',
+         isAutoDispose: false,
+         dependencies: null,
+         $allTransitiveDependencies: null,
+       );
+
+  @override
+  String debugGetCreateSourceHash() => _$todayAnalysisCountHash();
+
+  @override
+  String toString() {
+    return r'todayAnalysisCountProvider'
+        ''
+        '($argument)';
+  }
+
+  @$internal
+  @override
+  TodayAnalysisCount create() => TodayAnalysisCount();
+
+  @override
+  bool operator ==(Object other) {
+    return other is TodayAnalysisCountProvider && other.argument == argument;
+  }
+
+  @override
+  int get hashCode {
+    return argument.hashCode;
+  }
+}
+
+String _$todayAnalysisCountHash() =>
+    r'84431347fc98f6160337829148b0cd306f84ed26';
+
+/// 오늘 분석 횟수 Provider (State로 관리하도록)
+/// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+
+final class TodayAnalysisCountFamily extends $Family
+    with
+        $ClassFamilyOverride<
+          TodayAnalysisCount,
+          AsyncValue<int>,
+          int,
+          FutureOr<int>,
+          String
+        > {
+  const TodayAnalysisCountFamily._()
+    : super(
+        retry: null,
+        name: r'todayAnalysisCountProvider',
+        dependencies: null,
+        $allTransitiveDependencies: null,
+        isAutoDispose: false,
+      );
+
+  /// 오늘 분석 횟수 Provider (State로 관리하도록)
+  /// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+
+  TodayAnalysisCountProvider call(String userId) =>
+      TodayAnalysisCountProvider._(argument: userId, from: this);
+
+  @override
+  String toString() => r'todayAnalysisCountProvider';
+}
+
+/// 오늘 분석 횟수 Provider (State로 관리하도록)
+/// KeepAlive로 날짜 변경 시에도 깜빡임 방지 시도
+
+abstract class _$TodayAnalysisCount extends $AsyncNotifier<int> {
+  late final _$args = ref.$arg as String;
+  String get userId => _$args;
+
+  FutureOr<int> build(String userId);
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build(_$args);
+    final ref = this.ref as $Ref<AsyncValue<int>, int>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<AsyncValue<int>, int>,
+              AsyncValue<int>,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

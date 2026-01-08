@@ -1,0 +1,67 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'home_tab_provider.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+/// HomePage 바텀네비게이션 인덱스 상태 Provider
+
+@ProviderFor(HomeTab)
+const homeTabProvider = HomeTabProvider._();
+
+/// HomePage 바텀네비게이션 인덱스 상태 Provider
+final class HomeTabProvider extends $NotifierProvider<HomeTab, int> {
+  /// HomePage 바텀네비게이션 인덱스 상태 Provider
+  const HomeTabProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'homeTabProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$homeTabHash();
+
+  @$internal
+  @override
+  HomeTab create() => HomeTab();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(int value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<int>(value),
+    );
+  }
+}
+
+String _$homeTabHash() => r'b7516d0d8374fa514db8ba2783007f84aa0974f6';
+
+/// HomePage 바텀네비게이션 인덱스 상태 Provider
+
+abstract class _$HomeTab extends $Notifier<int> {
+  int build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    final created = build();
+    final ref = this.ref as $Ref<int, int>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<int, int>,
+              int,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, created);
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1039385832482",
+    "project_id": "vitameal-9d622",
+    "storage_bucket": "vitameal-9d622.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1039385832482:android:1b0d7d4bb6d576c9ad2e7b",
+        "android_client_info": {
+          "package_name": "com.alldayproject.vitameal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQGq0IdZqJ8r75Sk_dHYDmD-c2wwsU5AU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

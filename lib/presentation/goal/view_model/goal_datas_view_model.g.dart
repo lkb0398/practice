@@ -1,0 +1,64 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'goal_datas_view_model.dart';
+
+// **************************************************************************
+// RiverpodGenerator
+// **************************************************************************
+
+// GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint, type=warning
+
+@ProviderFor(GoalDatasViewModel)
+const goalDatasViewModelProvider = GoalDatasViewModelProvider._();
+
+final class GoalDatasViewModelProvider
+    extends $NotifierProvider<GoalDatasViewModel, void> {
+  const GoalDatasViewModelProvider._()
+    : super(
+        from: null,
+        argument: null,
+        retry: null,
+        name: r'goalDatasViewModelProvider',
+        isAutoDispose: true,
+        dependencies: null,
+        $allTransitiveDependencies: null,
+      );
+
+  @override
+  String debugGetCreateSourceHash() => _$goalDatasViewModelHash();
+
+  @$internal
+  @override
+  GoalDatasViewModel create() => GoalDatasViewModel();
+
+  /// {@macro riverpod.override_with_value}
+  Override overrideWithValue(void value) {
+    return $ProviderOverride(
+      origin: this,
+      providerOverride: $SyncValueProvider<void>(value),
+    );
+  }
+}
+
+String _$goalDatasViewModelHash() =>
+    r'a2ac9d4f3bd69867ddeab224222b992d586a964b';
+
+abstract class _$GoalDatasViewModel extends $Notifier<void> {
+  void build();
+  @$mustCallSuper
+  @override
+  void runBuild() {
+    build();
+    final ref = this.ref as $Ref<void, void>;
+    final element =
+        ref.element
+            as $ClassProviderElement<
+              AnyNotifier<void, void>,
+              void,
+              Object?,
+              Object?
+            >;
+    element.handleValue(ref, null);
+  }
+}

@@ -1,0 +1,3091 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'database.dart';
+
+// ignore_for_file: type=lint
+class $MealDaysTable extends MealDays
+    with TableInfo<$MealDaysTable, MealDayData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MealDaysTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _userIdMeta = const VerificationMeta('userId');
+  @override
+  late final GeneratedColumn<String> userId = GeneratedColumn<String>(
+    'user_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _mealDateMeta = const VerificationMeta(
+    'mealDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> mealDate = GeneratedColumn<DateTime>(
+    'meal_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _adherenceMeta = const VerificationMeta(
+    'adherence',
+  );
+  @override
+  late final GeneratedColumn<String> adherence = GeneratedColumn<String>(
+    'adherence',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _dataVersionMeta = const VerificationMeta(
+    'dataVersion',
+  );
+  @override
+  late final GeneratedColumn<int> dataVersion = GeneratedColumn<int>(
+    'data_version',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastEntryUpdatedAtMeta =
+      const VerificationMeta('lastEntryUpdatedAt');
+  @override
+  late final GeneratedColumn<DateTime> lastEntryUpdatedAt =
+      GeneratedColumn<DateTime>(
+        'last_entry_updated_at',
+        aliasedName,
+        true,
+        type: DriftSqlType.dateTime,
+        requiredDuringInsert: false,
+      );
+  static const VerificationMeta _needsAiRefreshMeta = const VerificationMeta(
+    'needsAiRefresh',
+  );
+  @override
+  late final GeneratedColumn<bool> needsAiRefresh = GeneratedColumn<bool>(
+    'needs_ai_refresh',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("needs_ai_refresh" IN (0, 1))',
+    ),
+    defaultValue: const Constant(true),
+  );
+  static const VerificationMeta _latestAiSummaryMeta = const VerificationMeta(
+    'latestAiSummary',
+  );
+  @override
+  late final GeneratedColumn<String> latestAiSummary = GeneratedColumn<String>(
+    'latest_ai_summary',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _deletedAtMeta = const VerificationMeta(
+    'deletedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> deletedAt = GeneratedColumn<DateTime>(
+    'deleted_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    userId,
+    mealDate,
+    adherence,
+    createdAt,
+    updatedAt,
+    dataVersion,
+    lastEntryUpdatedAt,
+    needsAiRefresh,
+    latestAiSummary,
+    deletedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'meal_days';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<MealDayData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('user_id')) {
+      context.handle(
+        _userIdMeta,
+        userId.isAcceptableOrUnknown(data['user_id']!, _userIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_userIdMeta);
+    }
+    if (data.containsKey('meal_date')) {
+      context.handle(
+        _mealDateMeta,
+        mealDate.isAcceptableOrUnknown(data['meal_date']!, _mealDateMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_mealDateMeta);
+    }
+    if (data.containsKey('adherence')) {
+      context.handle(
+        _adherenceMeta,
+        adherence.isAcceptableOrUnknown(data['adherence']!, _adherenceMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('data_version')) {
+      context.handle(
+        _dataVersionMeta,
+        dataVersion.isAcceptableOrUnknown(
+          data['data_version']!,
+          _dataVersionMeta,
+        ),
+      );
+    }
+    if (data.containsKey('last_entry_updated_at')) {
+      context.handle(
+        _lastEntryUpdatedAtMeta,
+        lastEntryUpdatedAt.isAcceptableOrUnknown(
+          data['last_entry_updated_at']!,
+          _lastEntryUpdatedAtMeta,
+        ),
+      );
+    }
+    if (data.containsKey('needs_ai_refresh')) {
+      context.handle(
+        _needsAiRefreshMeta,
+        needsAiRefresh.isAcceptableOrUnknown(
+          data['needs_ai_refresh']!,
+          _needsAiRefreshMeta,
+        ),
+      );
+    }
+    if (data.containsKey('latest_ai_summary')) {
+      context.handle(
+        _latestAiSummaryMeta,
+        latestAiSummary.isAcceptableOrUnknown(
+          data['latest_ai_summary']!,
+          _latestAiSummaryMeta,
+        ),
+      );
+    }
+    if (data.containsKey('deleted_at')) {
+      context.handle(
+        _deletedAtMeta,
+        deletedAt.isAcceptableOrUnknown(data['deleted_at']!, _deletedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  List<Set<GeneratedColumn>> get uniqueKeys => [
+    {userId, mealDate},
+  ];
+  @override
+  MealDayData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MealDayData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      userId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}user_id'],
+      )!,
+      mealDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}meal_date'],
+      )!,
+      adherence: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}adherence'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      dataVersion: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}data_version'],
+      )!,
+      lastEntryUpdatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_entry_updated_at'],
+      ),
+      needsAiRefresh: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}needs_ai_refresh'],
+      )!,
+      latestAiSummary: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}latest_ai_summary'],
+      ),
+      deletedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}deleted_at'],
+      ),
+    );
+  }
+
+  @override
+  $MealDaysTable createAlias(String alias) {
+    return $MealDaysTable(attachedDatabase, alias);
+  }
+}
+
+class MealDayData extends DataClass implements Insertable<MealDayData> {
+  final String id;
+  final String userId;
+  final DateTime mealDate;
+  final String? adherence;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final int dataVersion;
+  final DateTime? lastEntryUpdatedAt;
+  final bool needsAiRefresh;
+  final String? latestAiSummary;
+  final DateTime? deletedAt;
+  const MealDayData({
+    required this.id,
+    required this.userId,
+    required this.mealDate,
+    this.adherence,
+    required this.createdAt,
+    required this.updatedAt,
+    required this.dataVersion,
+    this.lastEntryUpdatedAt,
+    required this.needsAiRefresh,
+    this.latestAiSummary,
+    this.deletedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['user_id'] = Variable<String>(userId);
+    map['meal_date'] = Variable<DateTime>(mealDate);
+    if (!nullToAbsent || adherence != null) {
+      map['adherence'] = Variable<String>(adherence);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    map['data_version'] = Variable<int>(dataVersion);
+    if (!nullToAbsent || lastEntryUpdatedAt != null) {
+      map['last_entry_updated_at'] = Variable<DateTime>(lastEntryUpdatedAt);
+    }
+    map['needs_ai_refresh'] = Variable<bool>(needsAiRefresh);
+    if (!nullToAbsent || latestAiSummary != null) {
+      map['latest_ai_summary'] = Variable<String>(latestAiSummary);
+    }
+    if (!nullToAbsent || deletedAt != null) {
+      map['deleted_at'] = Variable<DateTime>(deletedAt);
+    }
+    return map;
+  }
+
+  MealDaysCompanion toCompanion(bool nullToAbsent) {
+    return MealDaysCompanion(
+      id: Value(id),
+      userId: Value(userId),
+      mealDate: Value(mealDate),
+      adherence: adherence == null && nullToAbsent
+          ? const Value.absent()
+          : Value(adherence),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      dataVersion: Value(dataVersion),
+      lastEntryUpdatedAt: lastEntryUpdatedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastEntryUpdatedAt),
+      needsAiRefresh: Value(needsAiRefresh),
+      latestAiSummary: latestAiSummary == null && nullToAbsent
+          ? const Value.absent()
+          : Value(latestAiSummary),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
+    );
+  }
+
+  factory MealDayData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return MealDayData(
+      id: serializer.fromJson<String>(json['id']),
+      userId: serializer.fromJson<String>(json['userId']),
+      mealDate: serializer.fromJson<DateTime>(json['mealDate']),
+      adherence: serializer.fromJson<String?>(json['adherence']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      dataVersion: serializer.fromJson<int>(json['dataVersion']),
+      lastEntryUpdatedAt: serializer.fromJson<DateTime?>(
+        json['lastEntryUpdatedAt'],
+      ),
+      needsAiRefresh: serializer.fromJson<bool>(json['needsAiRefresh']),
+      latestAiSummary: serializer.fromJson<String?>(json['latestAiSummary']),
+      deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'userId': serializer.toJson<String>(userId),
+      'mealDate': serializer.toJson<DateTime>(mealDate),
+      'adherence': serializer.toJson<String?>(adherence),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'dataVersion': serializer.toJson<int>(dataVersion),
+      'lastEntryUpdatedAt': serializer.toJson<DateTime?>(lastEntryUpdatedAt),
+      'needsAiRefresh': serializer.toJson<bool>(needsAiRefresh),
+      'latestAiSummary': serializer.toJson<String?>(latestAiSummary),
+      'deletedAt': serializer.toJson<DateTime?>(deletedAt),
+    };
+  }
+
+  MealDayData copyWith({
+    String? id,
+    String? userId,
+    DateTime? mealDate,
+    Value<String?> adherence = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    int? dataVersion,
+    Value<DateTime?> lastEntryUpdatedAt = const Value.absent(),
+    bool? needsAiRefresh,
+    Value<String?> latestAiSummary = const Value.absent(),
+    Value<DateTime?> deletedAt = const Value.absent(),
+  }) => MealDayData(
+    id: id ?? this.id,
+    userId: userId ?? this.userId,
+    mealDate: mealDate ?? this.mealDate,
+    adherence: adherence.present ? adherence.value : this.adherence,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    dataVersion: dataVersion ?? this.dataVersion,
+    lastEntryUpdatedAt: lastEntryUpdatedAt.present
+        ? lastEntryUpdatedAt.value
+        : this.lastEntryUpdatedAt,
+    needsAiRefresh: needsAiRefresh ?? this.needsAiRefresh,
+    latestAiSummary: latestAiSummary.present
+        ? latestAiSummary.value
+        : this.latestAiSummary,
+    deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
+  );
+  MealDayData copyWithCompanion(MealDaysCompanion data) {
+    return MealDayData(
+      id: data.id.present ? data.id.value : this.id,
+      userId: data.userId.present ? data.userId.value : this.userId,
+      mealDate: data.mealDate.present ? data.mealDate.value : this.mealDate,
+      adherence: data.adherence.present ? data.adherence.value : this.adherence,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      dataVersion: data.dataVersion.present
+          ? data.dataVersion.value
+          : this.dataVersion,
+      lastEntryUpdatedAt: data.lastEntryUpdatedAt.present
+          ? data.lastEntryUpdatedAt.value
+          : this.lastEntryUpdatedAt,
+      needsAiRefresh: data.needsAiRefresh.present
+          ? data.needsAiRefresh.value
+          : this.needsAiRefresh,
+      latestAiSummary: data.latestAiSummary.present
+          ? data.latestAiSummary.value
+          : this.latestAiSummary,
+      deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MealDayData(')
+          ..write('id: $id, ')
+          ..write('userId: $userId, ')
+          ..write('mealDate: $mealDate, ')
+          ..write('adherence: $adherence, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('dataVersion: $dataVersion, ')
+          ..write('lastEntryUpdatedAt: $lastEntryUpdatedAt, ')
+          ..write('needsAiRefresh: $needsAiRefresh, ')
+          ..write('latestAiSummary: $latestAiSummary, ')
+          ..write('deletedAt: $deletedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    userId,
+    mealDate,
+    adherence,
+    createdAt,
+    updatedAt,
+    dataVersion,
+    lastEntryUpdatedAt,
+    needsAiRefresh,
+    latestAiSummary,
+    deletedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is MealDayData &&
+          other.id == this.id &&
+          other.userId == this.userId &&
+          other.mealDate == this.mealDate &&
+          other.adherence == this.adherence &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.dataVersion == this.dataVersion &&
+          other.lastEntryUpdatedAt == this.lastEntryUpdatedAt &&
+          other.needsAiRefresh == this.needsAiRefresh &&
+          other.latestAiSummary == this.latestAiSummary &&
+          other.deletedAt == this.deletedAt);
+}
+
+class MealDaysCompanion extends UpdateCompanion<MealDayData> {
+  final Value<String> id;
+  final Value<String> userId;
+  final Value<DateTime> mealDate;
+  final Value<String?> adherence;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<int> dataVersion;
+  final Value<DateTime?> lastEntryUpdatedAt;
+  final Value<bool> needsAiRefresh;
+  final Value<String?> latestAiSummary;
+  final Value<DateTime?> deletedAt;
+  final Value<int> rowid;
+  const MealDaysCompanion({
+    this.id = const Value.absent(),
+    this.userId = const Value.absent(),
+    this.mealDate = const Value.absent(),
+    this.adherence = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.dataVersion = const Value.absent(),
+    this.lastEntryUpdatedAt = const Value.absent(),
+    this.needsAiRefresh = const Value.absent(),
+    this.latestAiSummary = const Value.absent(),
+    this.deletedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  MealDaysCompanion.insert({
+    required String id,
+    required String userId,
+    required DateTime mealDate,
+    this.adherence = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.dataVersion = const Value.absent(),
+    this.lastEntryUpdatedAt = const Value.absent(),
+    this.needsAiRefresh = const Value.absent(),
+    this.latestAiSummary = const Value.absent(),
+    this.deletedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       userId = Value(userId),
+       mealDate = Value(mealDate),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<MealDayData> custom({
+    Expression<String>? id,
+    Expression<String>? userId,
+    Expression<DateTime>? mealDate,
+    Expression<String>? adherence,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<int>? dataVersion,
+    Expression<DateTime>? lastEntryUpdatedAt,
+    Expression<bool>? needsAiRefresh,
+    Expression<String>? latestAiSummary,
+    Expression<DateTime>? deletedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (userId != null) 'user_id': userId,
+      if (mealDate != null) 'meal_date': mealDate,
+      if (adherence != null) 'adherence': adherence,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (dataVersion != null) 'data_version': dataVersion,
+      if (lastEntryUpdatedAt != null)
+        'last_entry_updated_at': lastEntryUpdatedAt,
+      if (needsAiRefresh != null) 'needs_ai_refresh': needsAiRefresh,
+      if (latestAiSummary != null) 'latest_ai_summary': latestAiSummary,
+      if (deletedAt != null) 'deleted_at': deletedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  MealDaysCompanion copyWith({
+    Value<String>? id,
+    Value<String>? userId,
+    Value<DateTime>? mealDate,
+    Value<String?>? adherence,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<int>? dataVersion,
+    Value<DateTime?>? lastEntryUpdatedAt,
+    Value<bool>? needsAiRefresh,
+    Value<String?>? latestAiSummary,
+    Value<DateTime?>? deletedAt,
+    Value<int>? rowid,
+  }) {
+    return MealDaysCompanion(
+      id: id ?? this.id,
+      userId: userId ?? this.userId,
+      mealDate: mealDate ?? this.mealDate,
+      adherence: adherence ?? this.adherence,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      dataVersion: dataVersion ?? this.dataVersion,
+      lastEntryUpdatedAt: lastEntryUpdatedAt ?? this.lastEntryUpdatedAt,
+      needsAiRefresh: needsAiRefresh ?? this.needsAiRefresh,
+      latestAiSummary: latestAiSummary ?? this.latestAiSummary,
+      deletedAt: deletedAt ?? this.deletedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (userId.present) {
+      map['user_id'] = Variable<String>(userId.value);
+    }
+    if (mealDate.present) {
+      map['meal_date'] = Variable<DateTime>(mealDate.value);
+    }
+    if (adherence.present) {
+      map['adherence'] = Variable<String>(adherence.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (dataVersion.present) {
+      map['data_version'] = Variable<int>(dataVersion.value);
+    }
+    if (lastEntryUpdatedAt.present) {
+      map['last_entry_updated_at'] = Variable<DateTime>(
+        lastEntryUpdatedAt.value,
+      );
+    }
+    if (needsAiRefresh.present) {
+      map['needs_ai_refresh'] = Variable<bool>(needsAiRefresh.value);
+    }
+    if (latestAiSummary.present) {
+      map['latest_ai_summary'] = Variable<String>(latestAiSummary.value);
+    }
+    if (deletedAt.present) {
+      map['deleted_at'] = Variable<DateTime>(deletedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MealDaysCompanion(')
+          ..write('id: $id, ')
+          ..write('userId: $userId, ')
+          ..write('mealDate: $mealDate, ')
+          ..write('adherence: $adherence, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('dataVersion: $dataVersion, ')
+          ..write('lastEntryUpdatedAt: $lastEntryUpdatedAt, ')
+          ..write('needsAiRefresh: $needsAiRefresh, ')
+          ..write('latestAiSummary: $latestAiSummary, ')
+          ..write('deletedAt: $deletedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $MealEntriesTable extends MealEntries
+    with TableInfo<$MealEntriesTable, MealEntryData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $MealEntriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<String> id = GeneratedColumn<String>(
+    'id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _mealDayIdMeta = const VerificationMeta(
+    'mealDayId',
+  );
+  @override
+  late final GeneratedColumn<String> mealDayId = GeneratedColumn<String>(
+    'meal_day_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _contentMeta = const VerificationMeta(
+    'content',
+  );
+  @override
+  late final GeneratedColumn<String> content = GeneratedColumn<String>(
+    'content',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _photoUrlMeta = const VerificationMeta(
+    'photoUrl',
+  );
+  @override
+  late final GeneratedColumn<String> photoUrl = GeneratedColumn<String>(
+    'photo_url',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _eatenAtMeta = const VerificationMeta(
+    'eatenAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> eatenAt = GeneratedColumn<DateTime>(
+    'eaten_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _updatedAtMeta = const VerificationMeta(
+    'updatedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> updatedAt = GeneratedColumn<DateTime>(
+    'updated_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _deletedAtMeta = const VerificationMeta(
+    'deletedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> deletedAt = GeneratedColumn<DateTime>(
+    'deleted_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    mealDayId,
+    category,
+    content,
+    photoUrl,
+    eatenAt,
+    createdAt,
+    updatedAt,
+    deletedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'meal_entries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<MealEntryData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    } else if (isInserting) {
+      context.missing(_idMeta);
+    }
+    if (data.containsKey('meal_day_id')) {
+      context.handle(
+        _mealDayIdMeta,
+        mealDayId.isAcceptableOrUnknown(data['meal_day_id']!, _mealDayIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_mealDayIdMeta);
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_categoryMeta);
+    }
+    if (data.containsKey('content')) {
+      context.handle(
+        _contentMeta,
+        content.isAcceptableOrUnknown(data['content']!, _contentMeta),
+      );
+    }
+    if (data.containsKey('photo_url')) {
+      context.handle(
+        _photoUrlMeta,
+        photoUrl.isAcceptableOrUnknown(data['photo_url']!, _photoUrlMeta),
+      );
+    }
+    if (data.containsKey('eaten_at')) {
+      context.handle(
+        _eatenAtMeta,
+        eatenAt.isAcceptableOrUnknown(data['eaten_at']!, _eatenAtMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('updated_at')) {
+      context.handle(
+        _updatedAtMeta,
+        updatedAt.isAcceptableOrUnknown(data['updated_at']!, _updatedAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_updatedAtMeta);
+    }
+    if (data.containsKey('deleted_at')) {
+      context.handle(
+        _deletedAtMeta,
+        deletedAt.isAcceptableOrUnknown(data['deleted_at']!, _deletedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  MealEntryData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return MealEntryData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}id'],
+      )!,
+      mealDayId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}meal_day_id'],
+      )!,
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      )!,
+      content: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}content'],
+      ),
+      photoUrl: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}photo_url'],
+      ),
+      eatenAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}eaten_at'],
+      ),
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      updatedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}updated_at'],
+      )!,
+      deletedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}deleted_at'],
+      ),
+    );
+  }
+
+  @override
+  $MealEntriesTable createAlias(String alias) {
+    return $MealEntriesTable(attachedDatabase, alias);
+  }
+}
+
+class MealEntryData extends DataClass implements Insertable<MealEntryData> {
+  final String id;
+  final String mealDayId;
+  final String category;
+  final String? content;
+  final String? photoUrl;
+  final DateTime? eatenAt;
+  final DateTime createdAt;
+  final DateTime updatedAt;
+  final DateTime? deletedAt;
+  const MealEntryData({
+    required this.id,
+    required this.mealDayId,
+    required this.category,
+    this.content,
+    this.photoUrl,
+    this.eatenAt,
+    required this.createdAt,
+    required this.updatedAt,
+    this.deletedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<String>(id);
+    map['meal_day_id'] = Variable<String>(mealDayId);
+    map['category'] = Variable<String>(category);
+    if (!nullToAbsent || content != null) {
+      map['content'] = Variable<String>(content);
+    }
+    if (!nullToAbsent || photoUrl != null) {
+      map['photo_url'] = Variable<String>(photoUrl);
+    }
+    if (!nullToAbsent || eatenAt != null) {
+      map['eaten_at'] = Variable<DateTime>(eatenAt);
+    }
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['updated_at'] = Variable<DateTime>(updatedAt);
+    if (!nullToAbsent || deletedAt != null) {
+      map['deleted_at'] = Variable<DateTime>(deletedAt);
+    }
+    return map;
+  }
+
+  MealEntriesCompanion toCompanion(bool nullToAbsent) {
+    return MealEntriesCompanion(
+      id: Value(id),
+      mealDayId: Value(mealDayId),
+      category: Value(category),
+      content: content == null && nullToAbsent
+          ? const Value.absent()
+          : Value(content),
+      photoUrl: photoUrl == null && nullToAbsent
+          ? const Value.absent()
+          : Value(photoUrl),
+      eatenAt: eatenAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(eatenAt),
+      createdAt: Value(createdAt),
+      updatedAt: Value(updatedAt),
+      deletedAt: deletedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(deletedAt),
+    );
+  }
+
+  factory MealEntryData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return MealEntryData(
+      id: serializer.fromJson<String>(json['id']),
+      mealDayId: serializer.fromJson<String>(json['mealDayId']),
+      category: serializer.fromJson<String>(json['category']),
+      content: serializer.fromJson<String?>(json['content']),
+      photoUrl: serializer.fromJson<String?>(json['photoUrl']),
+      eatenAt: serializer.fromJson<DateTime?>(json['eatenAt']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      updatedAt: serializer.fromJson<DateTime>(json['updatedAt']),
+      deletedAt: serializer.fromJson<DateTime?>(json['deletedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<String>(id),
+      'mealDayId': serializer.toJson<String>(mealDayId),
+      'category': serializer.toJson<String>(category),
+      'content': serializer.toJson<String?>(content),
+      'photoUrl': serializer.toJson<String?>(photoUrl),
+      'eatenAt': serializer.toJson<DateTime?>(eatenAt),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'updatedAt': serializer.toJson<DateTime>(updatedAt),
+      'deletedAt': serializer.toJson<DateTime?>(deletedAt),
+    };
+  }
+
+  MealEntryData copyWith({
+    String? id,
+    String? mealDayId,
+    String? category,
+    Value<String?> content = const Value.absent(),
+    Value<String?> photoUrl = const Value.absent(),
+    Value<DateTime?> eatenAt = const Value.absent(),
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    Value<DateTime?> deletedAt = const Value.absent(),
+  }) => MealEntryData(
+    id: id ?? this.id,
+    mealDayId: mealDayId ?? this.mealDayId,
+    category: category ?? this.category,
+    content: content.present ? content.value : this.content,
+    photoUrl: photoUrl.present ? photoUrl.value : this.photoUrl,
+    eatenAt: eatenAt.present ? eatenAt.value : this.eatenAt,
+    createdAt: createdAt ?? this.createdAt,
+    updatedAt: updatedAt ?? this.updatedAt,
+    deletedAt: deletedAt.present ? deletedAt.value : this.deletedAt,
+  );
+  MealEntryData copyWithCompanion(MealEntriesCompanion data) {
+    return MealEntryData(
+      id: data.id.present ? data.id.value : this.id,
+      mealDayId: data.mealDayId.present ? data.mealDayId.value : this.mealDayId,
+      category: data.category.present ? data.category.value : this.category,
+      content: data.content.present ? data.content.value : this.content,
+      photoUrl: data.photoUrl.present ? data.photoUrl.value : this.photoUrl,
+      eatenAt: data.eatenAt.present ? data.eatenAt.value : this.eatenAt,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      updatedAt: data.updatedAt.present ? data.updatedAt.value : this.updatedAt,
+      deletedAt: data.deletedAt.present ? data.deletedAt.value : this.deletedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MealEntryData(')
+          ..write('id: $id, ')
+          ..write('mealDayId: $mealDayId, ')
+          ..write('category: $category, ')
+          ..write('content: $content, ')
+          ..write('photoUrl: $photoUrl, ')
+          ..write('eatenAt: $eatenAt, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('deletedAt: $deletedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    mealDayId,
+    category,
+    content,
+    photoUrl,
+    eatenAt,
+    createdAt,
+    updatedAt,
+    deletedAt,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is MealEntryData &&
+          other.id == this.id &&
+          other.mealDayId == this.mealDayId &&
+          other.category == this.category &&
+          other.content == this.content &&
+          other.photoUrl == this.photoUrl &&
+          other.eatenAt == this.eatenAt &&
+          other.createdAt == this.createdAt &&
+          other.updatedAt == this.updatedAt &&
+          other.deletedAt == this.deletedAt);
+}
+
+class MealEntriesCompanion extends UpdateCompanion<MealEntryData> {
+  final Value<String> id;
+  final Value<String> mealDayId;
+  final Value<String> category;
+  final Value<String?> content;
+  final Value<String?> photoUrl;
+  final Value<DateTime?> eatenAt;
+  final Value<DateTime> createdAt;
+  final Value<DateTime> updatedAt;
+  final Value<DateTime?> deletedAt;
+  final Value<int> rowid;
+  const MealEntriesCompanion({
+    this.id = const Value.absent(),
+    this.mealDayId = const Value.absent(),
+    this.category = const Value.absent(),
+    this.content = const Value.absent(),
+    this.photoUrl = const Value.absent(),
+    this.eatenAt = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.updatedAt = const Value.absent(),
+    this.deletedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  MealEntriesCompanion.insert({
+    required String id,
+    required String mealDayId,
+    required String category,
+    this.content = const Value.absent(),
+    this.photoUrl = const Value.absent(),
+    this.eatenAt = const Value.absent(),
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    this.deletedAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : id = Value(id),
+       mealDayId = Value(mealDayId),
+       category = Value(category),
+       createdAt = Value(createdAt),
+       updatedAt = Value(updatedAt);
+  static Insertable<MealEntryData> custom({
+    Expression<String>? id,
+    Expression<String>? mealDayId,
+    Expression<String>? category,
+    Expression<String>? content,
+    Expression<String>? photoUrl,
+    Expression<DateTime>? eatenAt,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? updatedAt,
+    Expression<DateTime>? deletedAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (mealDayId != null) 'meal_day_id': mealDayId,
+      if (category != null) 'category': category,
+      if (content != null) 'content': content,
+      if (photoUrl != null) 'photo_url': photoUrl,
+      if (eatenAt != null) 'eaten_at': eatenAt,
+      if (createdAt != null) 'created_at': createdAt,
+      if (updatedAt != null) 'updated_at': updatedAt,
+      if (deletedAt != null) 'deleted_at': deletedAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  MealEntriesCompanion copyWith({
+    Value<String>? id,
+    Value<String>? mealDayId,
+    Value<String>? category,
+    Value<String?>? content,
+    Value<String?>? photoUrl,
+    Value<DateTime?>? eatenAt,
+    Value<DateTime>? createdAt,
+    Value<DateTime>? updatedAt,
+    Value<DateTime?>? deletedAt,
+    Value<int>? rowid,
+  }) {
+    return MealEntriesCompanion(
+      id: id ?? this.id,
+      mealDayId: mealDayId ?? this.mealDayId,
+      category: category ?? this.category,
+      content: content ?? this.content,
+      photoUrl: photoUrl ?? this.photoUrl,
+      eatenAt: eatenAt ?? this.eatenAt,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      deletedAt: deletedAt ?? this.deletedAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<String>(id.value);
+    }
+    if (mealDayId.present) {
+      map['meal_day_id'] = Variable<String>(mealDayId.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
+    if (content.present) {
+      map['content'] = Variable<String>(content.value);
+    }
+    if (photoUrl.present) {
+      map['photo_url'] = Variable<String>(photoUrl.value);
+    }
+    if (eatenAt.present) {
+      map['eaten_at'] = Variable<DateTime>(eatenAt.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (updatedAt.present) {
+      map['updated_at'] = Variable<DateTime>(updatedAt.value);
+    }
+    if (deletedAt.present) {
+      map['deleted_at'] = Variable<DateTime>(deletedAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('MealEntriesCompanion(')
+          ..write('id: $id, ')
+          ..write('mealDayId: $mealDayId, ')
+          ..write('category: $category, ')
+          ..write('content: $content, ')
+          ..write('photoUrl: $photoUrl, ')
+          ..write('eatenAt: $eatenAt, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('updatedAt: $updatedAt, ')
+          ..write('deletedAt: $deletedAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $OutboxTable extends Outbox with TableInfo<$OutboxTable, OutboxData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $OutboxTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _operationMeta = const VerificationMeta(
+    'operation',
+  );
+  @override
+  late final GeneratedColumn<String> operation = GeneratedColumn<String>(
+    'operation',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _targetTableMeta = const VerificationMeta(
+    'targetTable',
+  );
+  @override
+  late final GeneratedColumn<String> targetTable = GeneratedColumn<String>(
+    'table_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _recordIdMeta = const VerificationMeta(
+    'recordId',
+  );
+  @override
+  late final GeneratedColumn<String> recordId = GeneratedColumn<String>(
+    'record_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _payloadMeta = const VerificationMeta(
+    'payload',
+  );
+  @override
+  late final GeneratedColumn<String> payload = GeneratedColumn<String>(
+    'payload',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _retryCountMeta = const VerificationMeta(
+    'retryCount',
+  );
+  @override
+  late final GeneratedColumn<int> retryCount = GeneratedColumn<int>(
+    'retry_count',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _lastErrorMeta = const VerificationMeta(
+    'lastError',
+  );
+  @override
+  late final GeneratedColumn<String> lastError = GeneratedColumn<String>(
+    'last_error',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    operation,
+    targetTable,
+    recordId,
+    payload,
+    createdAt,
+    retryCount,
+    lastError,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'outbox';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<OutboxData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('operation')) {
+      context.handle(
+        _operationMeta,
+        operation.isAcceptableOrUnknown(data['operation']!, _operationMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_operationMeta);
+    }
+    if (data.containsKey('table_name')) {
+      context.handle(
+        _targetTableMeta,
+        targetTable.isAcceptableOrUnknown(
+          data['table_name']!,
+          _targetTableMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_targetTableMeta);
+    }
+    if (data.containsKey('record_id')) {
+      context.handle(
+        _recordIdMeta,
+        recordId.isAcceptableOrUnknown(data['record_id']!, _recordIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_recordIdMeta);
+    }
+    if (data.containsKey('payload')) {
+      context.handle(
+        _payloadMeta,
+        payload.isAcceptableOrUnknown(data['payload']!, _payloadMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_payloadMeta);
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('retry_count')) {
+      context.handle(
+        _retryCountMeta,
+        retryCount.isAcceptableOrUnknown(data['retry_count']!, _retryCountMeta),
+      );
+    }
+    if (data.containsKey('last_error')) {
+      context.handle(
+        _lastErrorMeta,
+        lastError.isAcceptableOrUnknown(data['last_error']!, _lastErrorMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  OutboxData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return OutboxData(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      operation: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}operation'],
+      )!,
+      targetTable: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}table_name'],
+      )!,
+      recordId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}record_id'],
+      )!,
+      payload: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}payload'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      retryCount: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}retry_count'],
+      )!,
+      lastError: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}last_error'],
+      ),
+    );
+  }
+
+  @override
+  $OutboxTable createAlias(String alias) {
+    return $OutboxTable(attachedDatabase, alias);
+  }
+}
+
+class OutboxData extends DataClass implements Insertable<OutboxData> {
+  final int id;
+  final String operation;
+  final String targetTable;
+  final String recordId;
+  final String payload;
+  final DateTime createdAt;
+  final int retryCount;
+  final String? lastError;
+  const OutboxData({
+    required this.id,
+    required this.operation,
+    required this.targetTable,
+    required this.recordId,
+    required this.payload,
+    required this.createdAt,
+    required this.retryCount,
+    this.lastError,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['operation'] = Variable<String>(operation);
+    map['table_name'] = Variable<String>(targetTable);
+    map['record_id'] = Variable<String>(recordId);
+    map['payload'] = Variable<String>(payload);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    map['retry_count'] = Variable<int>(retryCount);
+    if (!nullToAbsent || lastError != null) {
+      map['last_error'] = Variable<String>(lastError);
+    }
+    return map;
+  }
+
+  OutboxCompanion toCompanion(bool nullToAbsent) {
+    return OutboxCompanion(
+      id: Value(id),
+      operation: Value(operation),
+      targetTable: Value(targetTable),
+      recordId: Value(recordId),
+      payload: Value(payload),
+      createdAt: Value(createdAt),
+      retryCount: Value(retryCount),
+      lastError: lastError == null && nullToAbsent
+          ? const Value.absent()
+          : Value(lastError),
+    );
+  }
+
+  factory OutboxData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return OutboxData(
+      id: serializer.fromJson<int>(json['id']),
+      operation: serializer.fromJson<String>(json['operation']),
+      targetTable: serializer.fromJson<String>(json['targetTable']),
+      recordId: serializer.fromJson<String>(json['recordId']),
+      payload: serializer.fromJson<String>(json['payload']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      retryCount: serializer.fromJson<int>(json['retryCount']),
+      lastError: serializer.fromJson<String?>(json['lastError']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'operation': serializer.toJson<String>(operation),
+      'targetTable': serializer.toJson<String>(targetTable),
+      'recordId': serializer.toJson<String>(recordId),
+      'payload': serializer.toJson<String>(payload),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'retryCount': serializer.toJson<int>(retryCount),
+      'lastError': serializer.toJson<String?>(lastError),
+    };
+  }
+
+  OutboxData copyWith({
+    int? id,
+    String? operation,
+    String? targetTable,
+    String? recordId,
+    String? payload,
+    DateTime? createdAt,
+    int? retryCount,
+    Value<String?> lastError = const Value.absent(),
+  }) => OutboxData(
+    id: id ?? this.id,
+    operation: operation ?? this.operation,
+    targetTable: targetTable ?? this.targetTable,
+    recordId: recordId ?? this.recordId,
+    payload: payload ?? this.payload,
+    createdAt: createdAt ?? this.createdAt,
+    retryCount: retryCount ?? this.retryCount,
+    lastError: lastError.present ? lastError.value : this.lastError,
+  );
+  OutboxData copyWithCompanion(OutboxCompanion data) {
+    return OutboxData(
+      id: data.id.present ? data.id.value : this.id,
+      operation: data.operation.present ? data.operation.value : this.operation,
+      targetTable: data.targetTable.present
+          ? data.targetTable.value
+          : this.targetTable,
+      recordId: data.recordId.present ? data.recordId.value : this.recordId,
+      payload: data.payload.present ? data.payload.value : this.payload,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      retryCount: data.retryCount.present
+          ? data.retryCount.value
+          : this.retryCount,
+      lastError: data.lastError.present ? data.lastError.value : this.lastError,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OutboxData(')
+          ..write('id: $id, ')
+          ..write('operation: $operation, ')
+          ..write('targetTable: $targetTable, ')
+          ..write('recordId: $recordId, ')
+          ..write('payload: $payload, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('retryCount: $retryCount, ')
+          ..write('lastError: $lastError')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    operation,
+    targetTable,
+    recordId,
+    payload,
+    createdAt,
+    retryCount,
+    lastError,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is OutboxData &&
+          other.id == this.id &&
+          other.operation == this.operation &&
+          other.targetTable == this.targetTable &&
+          other.recordId == this.recordId &&
+          other.payload == this.payload &&
+          other.createdAt == this.createdAt &&
+          other.retryCount == this.retryCount &&
+          other.lastError == this.lastError);
+}
+
+class OutboxCompanion extends UpdateCompanion<OutboxData> {
+  final Value<int> id;
+  final Value<String> operation;
+  final Value<String> targetTable;
+  final Value<String> recordId;
+  final Value<String> payload;
+  final Value<DateTime> createdAt;
+  final Value<int> retryCount;
+  final Value<String?> lastError;
+  const OutboxCompanion({
+    this.id = const Value.absent(),
+    this.operation = const Value.absent(),
+    this.targetTable = const Value.absent(),
+    this.recordId = const Value.absent(),
+    this.payload = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.retryCount = const Value.absent(),
+    this.lastError = const Value.absent(),
+  });
+  OutboxCompanion.insert({
+    this.id = const Value.absent(),
+    required String operation,
+    required String targetTable,
+    required String recordId,
+    required String payload,
+    required DateTime createdAt,
+    this.retryCount = const Value.absent(),
+    this.lastError = const Value.absent(),
+  }) : operation = Value(operation),
+       targetTable = Value(targetTable),
+       recordId = Value(recordId),
+       payload = Value(payload),
+       createdAt = Value(createdAt);
+  static Insertable<OutboxData> custom({
+    Expression<int>? id,
+    Expression<String>? operation,
+    Expression<String>? targetTable,
+    Expression<String>? recordId,
+    Expression<String>? payload,
+    Expression<DateTime>? createdAt,
+    Expression<int>? retryCount,
+    Expression<String>? lastError,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (operation != null) 'operation': operation,
+      if (targetTable != null) 'table_name': targetTable,
+      if (recordId != null) 'record_id': recordId,
+      if (payload != null) 'payload': payload,
+      if (createdAt != null) 'created_at': createdAt,
+      if (retryCount != null) 'retry_count': retryCount,
+      if (lastError != null) 'last_error': lastError,
+    });
+  }
+
+  OutboxCompanion copyWith({
+    Value<int>? id,
+    Value<String>? operation,
+    Value<String>? targetTable,
+    Value<String>? recordId,
+    Value<String>? payload,
+    Value<DateTime>? createdAt,
+    Value<int>? retryCount,
+    Value<String?>? lastError,
+  }) {
+    return OutboxCompanion(
+      id: id ?? this.id,
+      operation: operation ?? this.operation,
+      targetTable: targetTable ?? this.targetTable,
+      recordId: recordId ?? this.recordId,
+      payload: payload ?? this.payload,
+      createdAt: createdAt ?? this.createdAt,
+      retryCount: retryCount ?? this.retryCount,
+      lastError: lastError ?? this.lastError,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (operation.present) {
+      map['operation'] = Variable<String>(operation.value);
+    }
+    if (targetTable.present) {
+      map['table_name'] = Variable<String>(targetTable.value);
+    }
+    if (recordId.present) {
+      map['record_id'] = Variable<String>(recordId.value);
+    }
+    if (payload.present) {
+      map['payload'] = Variable<String>(payload.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (retryCount.present) {
+      map['retry_count'] = Variable<int>(retryCount.value);
+    }
+    if (lastError.present) {
+      map['last_error'] = Variable<String>(lastError.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OutboxCompanion(')
+          ..write('id: $id, ')
+          ..write('operation: $operation, ')
+          ..write('targetTable: $targetTable, ')
+          ..write('recordId: $recordId, ')
+          ..write('payload: $payload, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('retryCount: $retryCount, ')
+          ..write('lastError: $lastError')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $SyncMetadataTable extends SyncMetadata
+    with TableInfo<$SyncMetadataTable, SyncMetadataData> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $SyncMetadataTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _userIdMeta = const VerificationMeta('userId');
+  @override
+  late final GeneratedColumn<String> userId = GeneratedColumn<String>(
+    'user_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _targetTableMeta = const VerificationMeta(
+    'targetTable',
+  );
+  @override
+  late final GeneratedColumn<String> targetTable = GeneratedColumn<String>(
+    'table_name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _lastSyncAtMeta = const VerificationMeta(
+    'lastSyncAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> lastSyncAt = GeneratedColumn<DateTime>(
+    'last_sync_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [userId, targetTable, lastSyncAt];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'sync_metadata';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<SyncMetadataData> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('user_id')) {
+      context.handle(
+        _userIdMeta,
+        userId.isAcceptableOrUnknown(data['user_id']!, _userIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_userIdMeta);
+    }
+    if (data.containsKey('table_name')) {
+      context.handle(
+        _targetTableMeta,
+        targetTable.isAcceptableOrUnknown(
+          data['table_name']!,
+          _targetTableMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_targetTableMeta);
+    }
+    if (data.containsKey('last_sync_at')) {
+      context.handle(
+        _lastSyncAtMeta,
+        lastSyncAt.isAcceptableOrUnknown(
+          data['last_sync_at']!,
+          _lastSyncAtMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_lastSyncAtMeta);
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {userId, targetTable};
+  @override
+  SyncMetadataData map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return SyncMetadataData(
+      userId: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}user_id'],
+      )!,
+      targetTable: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}table_name'],
+      )!,
+      lastSyncAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}last_sync_at'],
+      )!,
+    );
+  }
+
+  @override
+  $SyncMetadataTable createAlias(String alias) {
+    return $SyncMetadataTable(attachedDatabase, alias);
+  }
+}
+
+class SyncMetadataData extends DataClass
+    implements Insertable<SyncMetadataData> {
+  final String userId;
+  final String targetTable;
+  final DateTime lastSyncAt;
+  const SyncMetadataData({
+    required this.userId,
+    required this.targetTable,
+    required this.lastSyncAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['user_id'] = Variable<String>(userId);
+    map['table_name'] = Variable<String>(targetTable);
+    map['last_sync_at'] = Variable<DateTime>(lastSyncAt);
+    return map;
+  }
+
+  SyncMetadataCompanion toCompanion(bool nullToAbsent) {
+    return SyncMetadataCompanion(
+      userId: Value(userId),
+      targetTable: Value(targetTable),
+      lastSyncAt: Value(lastSyncAt),
+    );
+  }
+
+  factory SyncMetadataData.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return SyncMetadataData(
+      userId: serializer.fromJson<String>(json['userId']),
+      targetTable: serializer.fromJson<String>(json['targetTable']),
+      lastSyncAt: serializer.fromJson<DateTime>(json['lastSyncAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'userId': serializer.toJson<String>(userId),
+      'targetTable': serializer.toJson<String>(targetTable),
+      'lastSyncAt': serializer.toJson<DateTime>(lastSyncAt),
+    };
+  }
+
+  SyncMetadataData copyWith({
+    String? userId,
+    String? targetTable,
+    DateTime? lastSyncAt,
+  }) => SyncMetadataData(
+    userId: userId ?? this.userId,
+    targetTable: targetTable ?? this.targetTable,
+    lastSyncAt: lastSyncAt ?? this.lastSyncAt,
+  );
+  SyncMetadataData copyWithCompanion(SyncMetadataCompanion data) {
+    return SyncMetadataData(
+      userId: data.userId.present ? data.userId.value : this.userId,
+      targetTable: data.targetTable.present
+          ? data.targetTable.value
+          : this.targetTable,
+      lastSyncAt: data.lastSyncAt.present
+          ? data.lastSyncAt.value
+          : this.lastSyncAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SyncMetadataData(')
+          ..write('userId: $userId, ')
+          ..write('targetTable: $targetTable, ')
+          ..write('lastSyncAt: $lastSyncAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(userId, targetTable, lastSyncAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is SyncMetadataData &&
+          other.userId == this.userId &&
+          other.targetTable == this.targetTable &&
+          other.lastSyncAt == this.lastSyncAt);
+}
+
+class SyncMetadataCompanion extends UpdateCompanion<SyncMetadataData> {
+  final Value<String> userId;
+  final Value<String> targetTable;
+  final Value<DateTime> lastSyncAt;
+  final Value<int> rowid;
+  const SyncMetadataCompanion({
+    this.userId = const Value.absent(),
+    this.targetTable = const Value.absent(),
+    this.lastSyncAt = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  SyncMetadataCompanion.insert({
+    required String userId,
+    required String targetTable,
+    required DateTime lastSyncAt,
+    this.rowid = const Value.absent(),
+  }) : userId = Value(userId),
+       targetTable = Value(targetTable),
+       lastSyncAt = Value(lastSyncAt);
+  static Insertable<SyncMetadataData> custom({
+    Expression<String>? userId,
+    Expression<String>? targetTable,
+    Expression<DateTime>? lastSyncAt,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (userId != null) 'user_id': userId,
+      if (targetTable != null) 'table_name': targetTable,
+      if (lastSyncAt != null) 'last_sync_at': lastSyncAt,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  SyncMetadataCompanion copyWith({
+    Value<String>? userId,
+    Value<String>? targetTable,
+    Value<DateTime>? lastSyncAt,
+    Value<int>? rowid,
+  }) {
+    return SyncMetadataCompanion(
+      userId: userId ?? this.userId,
+      targetTable: targetTable ?? this.targetTable,
+      lastSyncAt: lastSyncAt ?? this.lastSyncAt,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (userId.present) {
+      map['user_id'] = Variable<String>(userId.value);
+    }
+    if (targetTable.present) {
+      map['table_name'] = Variable<String>(targetTable.value);
+    }
+    if (lastSyncAt.present) {
+      map['last_sync_at'] = Variable<DateTime>(lastSyncAt.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('SyncMetadataCompanion(')
+          ..write('userId: $userId, ')
+          ..write('targetTable: $targetTable, ')
+          ..write('lastSyncAt: $lastSyncAt, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
+abstract class _$AppDatabase extends GeneratedDatabase {
+  _$AppDatabase(QueryExecutor e) : super(e);
+  $AppDatabaseManager get managers => $AppDatabaseManager(this);
+  late final $MealDaysTable mealDays = $MealDaysTable(this);
+  late final $MealEntriesTable mealEntries = $MealEntriesTable(this);
+  late final $OutboxTable outbox = $OutboxTable(this);
+  late final $SyncMetadataTable syncMetadata = $SyncMetadataTable(this);
+  late final MealDao mealDao = MealDao(this as AppDatabase);
+  late final OutboxDao outboxDao = OutboxDao(this as AppDatabase);
+  late final SyncMetadataDao syncMetadataDao = SyncMetadataDao(
+    this as AppDatabase,
+  );
+  @override
+  Iterable<TableInfo<Table, Object?>> get allTables =>
+      allSchemaEntities.whereType<TableInfo<Table, Object?>>();
+  @override
+  List<DatabaseSchemaEntity> get allSchemaEntities => [
+    mealDays,
+    mealEntries,
+    outbox,
+    syncMetadata,
+  ];
+}
+
+typedef $$MealDaysTableCreateCompanionBuilder =
+    MealDaysCompanion Function({
+      required String id,
+      required String userId,
+      required DateTime mealDate,
+      Value<String?> adherence,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<int> dataVersion,
+      Value<DateTime?> lastEntryUpdatedAt,
+      Value<bool> needsAiRefresh,
+      Value<String?> latestAiSummary,
+      Value<DateTime?> deletedAt,
+      Value<int> rowid,
+    });
+typedef $$MealDaysTableUpdateCompanionBuilder =
+    MealDaysCompanion Function({
+      Value<String> id,
+      Value<String> userId,
+      Value<DateTime> mealDate,
+      Value<String?> adherence,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<int> dataVersion,
+      Value<DateTime?> lastEntryUpdatedAt,
+      Value<bool> needsAiRefresh,
+      Value<String?> latestAiSummary,
+      Value<DateTime?> deletedAt,
+      Value<int> rowid,
+    });
+
+class $$MealDaysTableFilterComposer
+    extends Composer<_$AppDatabase, $MealDaysTable> {
+  $$MealDaysTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get userId => $composableBuilder(
+    column: $table.userId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get mealDate => $composableBuilder(
+    column: $table.mealDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get adherence => $composableBuilder(
+    column: $table.adherence,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get dataVersion => $composableBuilder(
+    column: $table.dataVersion,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastEntryUpdatedAt => $composableBuilder(
+    column: $table.lastEntryUpdatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<bool> get needsAiRefresh => $composableBuilder(
+    column: $table.needsAiRefresh,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get latestAiSummary => $composableBuilder(
+    column: $table.latestAiSummary,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get deletedAt => $composableBuilder(
+    column: $table.deletedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$MealDaysTableOrderingComposer
+    extends Composer<_$AppDatabase, $MealDaysTable> {
+  $$MealDaysTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get userId => $composableBuilder(
+    column: $table.userId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get mealDate => $composableBuilder(
+    column: $table.mealDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get adherence => $composableBuilder(
+    column: $table.adherence,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get dataVersion => $composableBuilder(
+    column: $table.dataVersion,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastEntryUpdatedAt => $composableBuilder(
+    column: $table.lastEntryUpdatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get needsAiRefresh => $composableBuilder(
+    column: $table.needsAiRefresh,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get latestAiSummary => $composableBuilder(
+    column: $table.latestAiSummary,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
+    column: $table.deletedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$MealDaysTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MealDaysTable> {
+  $$MealDaysTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get userId =>
+      $composableBuilder(column: $table.userId, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get mealDate =>
+      $composableBuilder(column: $table.mealDate, builder: (column) => column);
+
+  GeneratedColumn<String> get adherence =>
+      $composableBuilder(column: $table.adherence, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<int> get dataVersion => $composableBuilder(
+    column: $table.dataVersion,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastEntryUpdatedAt => $composableBuilder(
+    column: $table.lastEntryUpdatedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<bool> get needsAiRefresh => $composableBuilder(
+    column: $table.needsAiRefresh,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get latestAiSummary => $composableBuilder(
+    column: $table.latestAiSummary,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+}
+
+class $$MealDaysTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $MealDaysTable,
+          MealDayData,
+          $$MealDaysTableFilterComposer,
+          $$MealDaysTableOrderingComposer,
+          $$MealDaysTableAnnotationComposer,
+          $$MealDaysTableCreateCompanionBuilder,
+          $$MealDaysTableUpdateCompanionBuilder,
+          (
+            MealDayData,
+            BaseReferences<_$AppDatabase, $MealDaysTable, MealDayData>,
+          ),
+          MealDayData,
+          PrefetchHooks Function()
+        > {
+  $$MealDaysTableTableManager(_$AppDatabase db, $MealDaysTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$MealDaysTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MealDaysTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MealDaysTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> userId = const Value.absent(),
+                Value<DateTime> mealDate = const Value.absent(),
+                Value<String?> adherence = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<int> dataVersion = const Value.absent(),
+                Value<DateTime?> lastEntryUpdatedAt = const Value.absent(),
+                Value<bool> needsAiRefresh = const Value.absent(),
+                Value<String?> latestAiSummary = const Value.absent(),
+                Value<DateTime?> deletedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => MealDaysCompanion(
+                id: id,
+                userId: userId,
+                mealDate: mealDate,
+                adherence: adherence,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                dataVersion: dataVersion,
+                lastEntryUpdatedAt: lastEntryUpdatedAt,
+                needsAiRefresh: needsAiRefresh,
+                latestAiSummary: latestAiSummary,
+                deletedAt: deletedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String userId,
+                required DateTime mealDate,
+                Value<String?> adherence = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<int> dataVersion = const Value.absent(),
+                Value<DateTime?> lastEntryUpdatedAt = const Value.absent(),
+                Value<bool> needsAiRefresh = const Value.absent(),
+                Value<String?> latestAiSummary = const Value.absent(),
+                Value<DateTime?> deletedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => MealDaysCompanion.insert(
+                id: id,
+                userId: userId,
+                mealDate: mealDate,
+                adherence: adherence,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                dataVersion: dataVersion,
+                lastEntryUpdatedAt: lastEntryUpdatedAt,
+                needsAiRefresh: needsAiRefresh,
+                latestAiSummary: latestAiSummary,
+                deletedAt: deletedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$MealDaysTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $MealDaysTable,
+      MealDayData,
+      $$MealDaysTableFilterComposer,
+      $$MealDaysTableOrderingComposer,
+      $$MealDaysTableAnnotationComposer,
+      $$MealDaysTableCreateCompanionBuilder,
+      $$MealDaysTableUpdateCompanionBuilder,
+      (MealDayData, BaseReferences<_$AppDatabase, $MealDaysTable, MealDayData>),
+      MealDayData,
+      PrefetchHooks Function()
+    >;
+typedef $$MealEntriesTableCreateCompanionBuilder =
+    MealEntriesCompanion Function({
+      required String id,
+      required String mealDayId,
+      required String category,
+      Value<String?> content,
+      Value<String?> photoUrl,
+      Value<DateTime?> eatenAt,
+      required DateTime createdAt,
+      required DateTime updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> rowid,
+    });
+typedef $$MealEntriesTableUpdateCompanionBuilder =
+    MealEntriesCompanion Function({
+      Value<String> id,
+      Value<String> mealDayId,
+      Value<String> category,
+      Value<String?> content,
+      Value<String?> photoUrl,
+      Value<DateTime?> eatenAt,
+      Value<DateTime> createdAt,
+      Value<DateTime> updatedAt,
+      Value<DateTime?> deletedAt,
+      Value<int> rowid,
+    });
+
+class $$MealEntriesTableFilterComposer
+    extends Composer<_$AppDatabase, $MealEntriesTable> {
+  $$MealEntriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get mealDayId => $composableBuilder(
+    column: $table.mealDayId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get content => $composableBuilder(
+    column: $table.content,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get photoUrl => $composableBuilder(
+    column: $table.photoUrl,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get eatenAt => $composableBuilder(
+    column: $table.eatenAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get deletedAt => $composableBuilder(
+    column: $table.deletedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$MealEntriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $MealEntriesTable> {
+  $$MealEntriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get mealDayId => $composableBuilder(
+    column: $table.mealDayId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get content => $composableBuilder(
+    column: $table.content,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get photoUrl => $composableBuilder(
+    column: $table.photoUrl,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get eatenAt => $composableBuilder(
+    column: $table.eatenAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get updatedAt => $composableBuilder(
+    column: $table.updatedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get deletedAt => $composableBuilder(
+    column: $table.deletedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$MealEntriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $MealEntriesTable> {
+  $$MealEntriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get mealDayId =>
+      $composableBuilder(column: $table.mealDayId, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
+
+  GeneratedColumn<String> get content =>
+      $composableBuilder(column: $table.content, builder: (column) => column);
+
+  GeneratedColumn<String> get photoUrl =>
+      $composableBuilder(column: $table.photoUrl, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get eatenAt =>
+      $composableBuilder(column: $table.eatenAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get updatedAt =>
+      $composableBuilder(column: $table.updatedAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get deletedAt =>
+      $composableBuilder(column: $table.deletedAt, builder: (column) => column);
+}
+
+class $$MealEntriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $MealEntriesTable,
+          MealEntryData,
+          $$MealEntriesTableFilterComposer,
+          $$MealEntriesTableOrderingComposer,
+          $$MealEntriesTableAnnotationComposer,
+          $$MealEntriesTableCreateCompanionBuilder,
+          $$MealEntriesTableUpdateCompanionBuilder,
+          (
+            MealEntryData,
+            BaseReferences<_$AppDatabase, $MealEntriesTable, MealEntryData>,
+          ),
+          MealEntryData,
+          PrefetchHooks Function()
+        > {
+  $$MealEntriesTableTableManager(_$AppDatabase db, $MealEntriesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$MealEntriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$MealEntriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$MealEntriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> id = const Value.absent(),
+                Value<String> mealDayId = const Value.absent(),
+                Value<String> category = const Value.absent(),
+                Value<String?> content = const Value.absent(),
+                Value<String?> photoUrl = const Value.absent(),
+                Value<DateTime?> eatenAt = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime> updatedAt = const Value.absent(),
+                Value<DateTime?> deletedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => MealEntriesCompanion(
+                id: id,
+                mealDayId: mealDayId,
+                category: category,
+                content: content,
+                photoUrl: photoUrl,
+                eatenAt: eatenAt,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                deletedAt: deletedAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String id,
+                required String mealDayId,
+                required String category,
+                Value<String?> content = const Value.absent(),
+                Value<String?> photoUrl = const Value.absent(),
+                Value<DateTime?> eatenAt = const Value.absent(),
+                required DateTime createdAt,
+                required DateTime updatedAt,
+                Value<DateTime?> deletedAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => MealEntriesCompanion.insert(
+                id: id,
+                mealDayId: mealDayId,
+                category: category,
+                content: content,
+                photoUrl: photoUrl,
+                eatenAt: eatenAt,
+                createdAt: createdAt,
+                updatedAt: updatedAt,
+                deletedAt: deletedAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$MealEntriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $MealEntriesTable,
+      MealEntryData,
+      $$MealEntriesTableFilterComposer,
+      $$MealEntriesTableOrderingComposer,
+      $$MealEntriesTableAnnotationComposer,
+      $$MealEntriesTableCreateCompanionBuilder,
+      $$MealEntriesTableUpdateCompanionBuilder,
+      (
+        MealEntryData,
+        BaseReferences<_$AppDatabase, $MealEntriesTable, MealEntryData>,
+      ),
+      MealEntryData,
+      PrefetchHooks Function()
+    >;
+typedef $$OutboxTableCreateCompanionBuilder =
+    OutboxCompanion Function({
+      Value<int> id,
+      required String operation,
+      required String targetTable,
+      required String recordId,
+      required String payload,
+      required DateTime createdAt,
+      Value<int> retryCount,
+      Value<String?> lastError,
+    });
+typedef $$OutboxTableUpdateCompanionBuilder =
+    OutboxCompanion Function({
+      Value<int> id,
+      Value<String> operation,
+      Value<String> targetTable,
+      Value<String> recordId,
+      Value<String> payload,
+      Value<DateTime> createdAt,
+      Value<int> retryCount,
+      Value<String?> lastError,
+    });
+
+class $$OutboxTableFilterComposer
+    extends Composer<_$AppDatabase, $OutboxTable> {
+  $$OutboxTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get operation => $composableBuilder(
+    column: $table.operation,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get recordId => $composableBuilder(
+    column: $table.recordId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get payload => $composableBuilder(
+    column: $table.payload,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get retryCount => $composableBuilder(
+    column: $table.retryCount,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get lastError => $composableBuilder(
+    column: $table.lastError,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$OutboxTableOrderingComposer
+    extends Composer<_$AppDatabase, $OutboxTable> {
+  $$OutboxTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get operation => $composableBuilder(
+    column: $table.operation,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get recordId => $composableBuilder(
+    column: $table.recordId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get payload => $composableBuilder(
+    column: $table.payload,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get retryCount => $composableBuilder(
+    column: $table.retryCount,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get lastError => $composableBuilder(
+    column: $table.lastError,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$OutboxTableAnnotationComposer
+    extends Composer<_$AppDatabase, $OutboxTable> {
+  $$OutboxTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get operation =>
+      $composableBuilder(column: $table.operation, builder: (column) => column);
+
+  GeneratedColumn<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get recordId =>
+      $composableBuilder(column: $table.recordId, builder: (column) => column);
+
+  GeneratedColumn<String> get payload =>
+      $composableBuilder(column: $table.payload, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<int> get retryCount => $composableBuilder(
+    column: $table.retryCount,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get lastError =>
+      $composableBuilder(column: $table.lastError, builder: (column) => column);
+}
+
+class $$OutboxTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $OutboxTable,
+          OutboxData,
+          $$OutboxTableFilterComposer,
+          $$OutboxTableOrderingComposer,
+          $$OutboxTableAnnotationComposer,
+          $$OutboxTableCreateCompanionBuilder,
+          $$OutboxTableUpdateCompanionBuilder,
+          (OutboxData, BaseReferences<_$AppDatabase, $OutboxTable, OutboxData>),
+          OutboxData,
+          PrefetchHooks Function()
+        > {
+  $$OutboxTableTableManager(_$AppDatabase db, $OutboxTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$OutboxTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$OutboxTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$OutboxTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> operation = const Value.absent(),
+                Value<String> targetTable = const Value.absent(),
+                Value<String> recordId = const Value.absent(),
+                Value<String> payload = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<int> retryCount = const Value.absent(),
+                Value<String?> lastError = const Value.absent(),
+              }) => OutboxCompanion(
+                id: id,
+                operation: operation,
+                targetTable: targetTable,
+                recordId: recordId,
+                payload: payload,
+                createdAt: createdAt,
+                retryCount: retryCount,
+                lastError: lastError,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String operation,
+                required String targetTable,
+                required String recordId,
+                required String payload,
+                required DateTime createdAt,
+                Value<int> retryCount = const Value.absent(),
+                Value<String?> lastError = const Value.absent(),
+              }) => OutboxCompanion.insert(
+                id: id,
+                operation: operation,
+                targetTable: targetTable,
+                recordId: recordId,
+                payload: payload,
+                createdAt: createdAt,
+                retryCount: retryCount,
+                lastError: lastError,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$OutboxTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $OutboxTable,
+      OutboxData,
+      $$OutboxTableFilterComposer,
+      $$OutboxTableOrderingComposer,
+      $$OutboxTableAnnotationComposer,
+      $$OutboxTableCreateCompanionBuilder,
+      $$OutboxTableUpdateCompanionBuilder,
+      (OutboxData, BaseReferences<_$AppDatabase, $OutboxTable, OutboxData>),
+      OutboxData,
+      PrefetchHooks Function()
+    >;
+typedef $$SyncMetadataTableCreateCompanionBuilder =
+    SyncMetadataCompanion Function({
+      required String userId,
+      required String targetTable,
+      required DateTime lastSyncAt,
+      Value<int> rowid,
+    });
+typedef $$SyncMetadataTableUpdateCompanionBuilder =
+    SyncMetadataCompanion Function({
+      Value<String> userId,
+      Value<String> targetTable,
+      Value<DateTime> lastSyncAt,
+      Value<int> rowid,
+    });
+
+class $$SyncMetadataTableFilterComposer
+    extends Composer<_$AppDatabase, $SyncMetadataTable> {
+  $$SyncMetadataTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get userId => $composableBuilder(
+    column: $table.userId,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get lastSyncAt => $composableBuilder(
+    column: $table.lastSyncAt,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$SyncMetadataTableOrderingComposer
+    extends Composer<_$AppDatabase, $SyncMetadataTable> {
+  $$SyncMetadataTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get userId => $composableBuilder(
+    column: $table.userId,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get lastSyncAt => $composableBuilder(
+    column: $table.lastSyncAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$SyncMetadataTableAnnotationComposer
+    extends Composer<_$AppDatabase, $SyncMetadataTable> {
+  $$SyncMetadataTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get userId =>
+      $composableBuilder(column: $table.userId, builder: (column) => column);
+
+  GeneratedColumn<String> get targetTable => $composableBuilder(
+    column: $table.targetTable,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get lastSyncAt => $composableBuilder(
+    column: $table.lastSyncAt,
+    builder: (column) => column,
+  );
+}
+
+class $$SyncMetadataTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $SyncMetadataTable,
+          SyncMetadataData,
+          $$SyncMetadataTableFilterComposer,
+          $$SyncMetadataTableOrderingComposer,
+          $$SyncMetadataTableAnnotationComposer,
+          $$SyncMetadataTableCreateCompanionBuilder,
+          $$SyncMetadataTableUpdateCompanionBuilder,
+          (
+            SyncMetadataData,
+            BaseReferences<_$AppDatabase, $SyncMetadataTable, SyncMetadataData>,
+          ),
+          SyncMetadataData,
+          PrefetchHooks Function()
+        > {
+  $$SyncMetadataTableTableManager(_$AppDatabase db, $SyncMetadataTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$SyncMetadataTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$SyncMetadataTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$SyncMetadataTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> userId = const Value.absent(),
+                Value<String> targetTable = const Value.absent(),
+                Value<DateTime> lastSyncAt = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => SyncMetadataCompanion(
+                userId: userId,
+                targetTable: targetTable,
+                lastSyncAt: lastSyncAt,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String userId,
+                required String targetTable,
+                required DateTime lastSyncAt,
+                Value<int> rowid = const Value.absent(),
+              }) => SyncMetadataCompanion.insert(
+                userId: userId,
+                targetTable: targetTable,
+                lastSyncAt: lastSyncAt,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$SyncMetadataTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $SyncMetadataTable,
+      SyncMetadataData,
+      $$SyncMetadataTableFilterComposer,
+      $$SyncMetadataTableOrderingComposer,
+      $$SyncMetadataTableAnnotationComposer,
+      $$SyncMetadataTableCreateCompanionBuilder,
+      $$SyncMetadataTableUpdateCompanionBuilder,
+      (
+        SyncMetadataData,
+        BaseReferences<_$AppDatabase, $SyncMetadataTable, SyncMetadataData>,
+      ),
+      SyncMetadataData,
+      PrefetchHooks Function()
+    >;
+
+class $AppDatabaseManager {
+  final _$AppDatabase _db;
+  $AppDatabaseManager(this._db);
+  $$MealDaysTableTableManager get mealDays =>
+      $$MealDaysTableTableManager(_db, _db.mealDays);
+  $$MealEntriesTableTableManager get mealEntries =>
+      $$MealEntriesTableTableManager(_db, _db.mealEntries);
+  $$OutboxTableTableManager get outbox =>
+      $$OutboxTableTableManager(_db, _db.outbox);
+  $$SyncMetadataTableTableManager get syncMetadata =>
+      $$SyncMetadataTableTableManager(_db, _db.syncMetadata);
+}

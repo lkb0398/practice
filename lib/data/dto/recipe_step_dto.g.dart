@@ -1,0 +1,21 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'recipe_step_dto.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_RecipeStepDto _$RecipeStepDtoFromJson(Map<String, dynamic> json) =>
+    _RecipeStepDto(
+      stepOrder: (json['step_order'] as num).toInt(),
+      description: json['description'] as String,
+      imageUrl: json['image_url'] as String?,
+    );
+
+Map<String, dynamic> _$RecipeStepDtoToJson(_RecipeStepDto instance) =>
+    <String, dynamic>{
+      'step_order': instance.stepOrder,
+      'description': instance.description,
+      'image_url': instance.imageUrl,
+    };

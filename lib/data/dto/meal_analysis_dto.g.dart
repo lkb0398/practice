@@ -1,0 +1,39 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'meal_analysis_dto.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_MealAnalysisDto _$MealAnalysisDtoFromJson(Map<String, dynamic> json) =>
+    _MealAnalysisDto(
+      id: json['id'] as String,
+      mealDayId: json['meal_day_id'] as String,
+      userId: json['user_id'] as String,
+      basedOnVersion: (json['based_on_version'] as num).toInt(),
+      locale: json['locale'] as String?,
+      overallSummary: json['overall_summary'] as String,
+      conditionFeedback: (json['condition_feedback'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+      suggestions: (json['suggestions'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList(),
+      result: json['result'] as Map<String, dynamic>,
+      createdAt: json['created_at'] as String,
+    );
+
+Map<String, dynamic> _$MealAnalysisDtoToJson(_MealAnalysisDto instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'meal_day_id': instance.mealDayId,
+      'user_id': instance.userId,
+      'based_on_version': instance.basedOnVersion,
+      'locale': instance.locale,
+      'overall_summary': instance.overallSummary,
+      'condition_feedback': instance.conditionFeedback,
+      'suggestions': instance.suggestions,
+      'result': instance.result,
+      'created_at': instance.createdAt,
+    };
