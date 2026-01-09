@@ -1,0 +1,12 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/presentation/info/view/widget/graph.dart",
+    "package:vitameal/presentation/info/view/widget/guage.dart",
+    "package:vitameal/presentation/ui_provider/goals_provider.dart",
+    "package:vitameal/presentation/info/view/widget/bordered_container.dart"
+  ]
+}

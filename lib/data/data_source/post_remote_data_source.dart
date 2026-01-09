@@ -35,7 +35,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   Future<List<PostDto>> fetchPosts({required int from, required int to}) async {
     final response = await _client
         .from('posts')
-        .select('*, recipe_steps(*), bookmarks(user_id)')
+        .select('*, recipe_steps(*), post_bookmarks(user_id)')
         .order('created_at', ascending: false)
         .range(from, to);
     return (response as List).map((json) => PostDto.fromJson(json)).toList();
@@ -46,7 +46,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
     required String userId,
     required String postId,
   }) async {
-    return await _client.from('bookmarks').select().match({
+    return await _client.from('post_bookmarks').select().match({
       'user_id': userId,
       'post_id': postId,
     }).maybeSingle();
@@ -54,7 +54,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
 
   @override
   Future<void> insertBookmark(String userId, String postId) async {
-    await _client.from('bookmarks').insert({
+    await _client.from('post_bookmarks').insert({
       'user_id': userId,
       'post_id': postId,
     });
@@ -62,7 +62,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
 
   @override
   Future<void> deleteBookmark(String userId, String postId) async {
-    await _client.from('bookmarks').delete().match({
+    await _client.from('post_bookmarks').delete().match({
       'user_id': userId,
       'post_id': postId,
     });
@@ -71,7 +71,7 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   @override
   Future<List<Map<String, dynamic>>> fetchBookmarkedPosts(String userId) async {
     final response = await _client
-        .from('bookmarks')
+        .from('post_bookmarks')
         .select('posts(*, recipe_steps(*))')
         .eq('user_id', userId);
     return List<Map<String, dynamic>>.from(response);

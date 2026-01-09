@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/domain/entity/goal_datas_entity.dart"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/cupertino.dart",
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:tap_debouncer/tap_debouncer.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/domain/entity/notifications_entity.dart",
+    "package:vitameal/presentation/widget/button/done_button.dart",
+    "package:vitameal/presentation/widget/validate_textformfield.dart"
+  ]
+}

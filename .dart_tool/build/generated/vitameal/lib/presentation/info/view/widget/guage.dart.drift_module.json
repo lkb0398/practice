@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:vitameal/domain/entity/goal_datas_entity.dart"
+  ]
+}

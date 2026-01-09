@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:vitameal/domain/enum/meal_category_enum.dart"
+  ]
+}

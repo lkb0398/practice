@@ -3,6 +3,7 @@ import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:go_router/go_router.dart'; // GoRouter 임포트 추가
 import 'package:vitameal/core/config/routes.dart';
+import 'package:vitameal/presentation/post/view_model/tag_view_model.dart';
 import '../view_model/post_view_model.dart';
 
 class PostPage extends HookConsumerWidget {
@@ -13,8 +14,8 @@ class PostPage extends HookConsumerWidget {
     final postAsync = ref.watch(postViewModelProvider);
     final scrollController = useScrollController();
 
-    final allTags = ['#다이어트식', '#저탄고지', '#저염식', '#비건식'];
-    final selectedTags = useState<List<String>>([]);
+    final allTagsAsync = ref.watch(allTagsProvider);
+    final selectedTagIds = useState<List<int>>([]);
 
     useEffect(() {
       void listener() {
@@ -56,44 +57,55 @@ class PostPage extends HookConsumerWidget {
               ),
             ),
             const SizedBox(height: 24),
-            SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: allTags.map((tag) {
-                  final isSelected = selectedTags.value.contains(tag);
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 8.0),
-                    child: ChoiceChip(
-                      showCheckmark: false,
-                      label: Text(
-                        tag,
-                        style: TextStyle(
-                          color: const Color(0xFF669900),
-                          fontWeight: isSelected
-                              ? FontWeight.bold
-                              : FontWeight.normal,
+            allTagsAsync.when(
+              data: (tags) => SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: tags.map((tag) {
+                    final isSelected = selectedTagIds.value.contains(tag.id);
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: ChoiceChip(
+                        showCheckmark: false,
+                        label: Text(
+                          "#${tag.name}", // DB의 태그 이름 사용
+                          style: TextStyle(
+                            color: const Color(0xFF669900),
+                            fontWeight: isSelected
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                          ),
+                        ),
+                        selected: isSelected,
+                        onSelected: (selected) {
+                          if (selected) {
+                            selectedTagIds.value = [
+                              ...selectedTagIds.value,
+                              tag.id,
+                            ];
+                          } else {
+                            selectedTagIds.value = selectedTagIds.value
+                                .where((id) => id != tag.id)
+                                .toList();
+                          }
+                          // 💡 추가 팁: 여기서 선택된 태그 ID들로 포스트 필터링 기능을 추가할 수 있습니다.
+                        },
+                        selectedColor: const Color(0xFFD2F291),
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: const BorderSide(color: Color(0xFF89CC00)),
                         ),
                       ),
-                      selected: isSelected,
-                      onSelected: (selected) {
-                        if (selected) {
-                          selectedTags.value = [...selectedTags.value, tag];
-                        } else {
-                          selectedTags.value = selectedTags.value
-                              .where((t) => t != tag)
-                              .toList();
-                        }
-                      },
-                      selectedColor: const Color(0xFFD2F291),
-                      backgroundColor: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(8),
-                        side: const BorderSide(color: Color(0xFF89CC00)),
-                      ),
-                    ),
-                  );
-                }).toList(),
+                    );
+                  }).toList(),
+                ),
               ),
+              loading: () => const SizedBox(
+                height: 42,
+                child: Center(child: CircularProgressIndicator(strokeWidth: 2)),
+              ),
+              error: (err, _) => const Text("태그 로드 실패"),
             ),
             const SizedBox(height: 10),
             Expanded(
@@ -184,8 +196,7 @@ class PostPage extends HookConsumerWidget {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () =>
-            context.push(AppRoutePath.editPost), 
+        onPressed: () => context.push(AppRoutePath.editPost),
         backgroundColor: const Color(0xFF89CC00),
         child: const Icon(Icons.edit, color: Colors.white),
       ),

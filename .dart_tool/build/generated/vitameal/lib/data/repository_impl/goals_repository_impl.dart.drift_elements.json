@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:vitameal/data/data_source/goals_data_source.dart","transitive":false},{"uri":"package:vitameal/domain/entity/goals_entity.dart","transitive":false},{"uri":"package:vitameal/data/mapper/goals_mapper.dart","transitive":false},{"uri":"package:vitameal/domain/repository/goals_repository.dart","transitive":false}],"elements":[]}

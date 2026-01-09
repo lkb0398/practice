@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:flutter/material.dart","transitive":false},{"uri":"package:vitameal/data/dto/notifications_dto.dart","transitive":false},{"uri":"package:vitameal/domain/entity/notifications_entity.dart","transitive":false}],"elements":[]}

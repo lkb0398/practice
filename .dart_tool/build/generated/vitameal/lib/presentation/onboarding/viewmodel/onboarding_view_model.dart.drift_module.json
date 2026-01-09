@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/domain/entity/profiles_entity.dart",
+    "package:vitameal/domain/enum/gender_type_enum.dart",
+    "package:vitameal/presentation/ui_provider/profiles_provider.dart"
+  ]
+}

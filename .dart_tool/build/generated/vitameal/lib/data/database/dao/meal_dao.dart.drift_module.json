@@ -1,0 +1,62 @@
+{
+  "elements": {
+    "MealDao": {
+      "id": {
+        "library_uri": "package:vitameal/data/database/dao/meal_dao.dart",
+        "name": "MealDao"
+      },
+      "declaration": {
+        "source_uri": "package:vitameal/data/database/dao/meal_dao.dart",
+        "offset": 386,
+        "name": "MealDao"
+      },
+      "references": [
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_days_table.dart",
+          "name": "meal_days"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_entries_table.dart",
+          "name": "meal_entries"
+        }
+      ],
+      "type": "dao",
+      "tables": [
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_days_table.dart",
+          "name": "meal_days"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_entries_table.dart",
+          "name": "meal_entries"
+        }
+      ],
+      "views": [],
+      "includes": [],
+      "queries": [],
+      "dart_type": {
+        "elements": [
+          {
+            "lexeme": "MealDao",
+            "import_uri": "package:vitameal/data/database/dao/meal_dao.dart"
+          }
+        ]
+      },
+      "database": {
+        "elements": [
+          {
+            "lexeme": "AppDatabase",
+            "import_uri": "package:vitameal/data/database/database.dart"
+          }
+        ]
+      }
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/data/database/table/meal_days_table.dart",
+    "package:vitameal/data/database/table/meal_entries_table.dart",
+    "package:vitameal/domain/enum/meal_category_enum.dart"
+  ]
+}

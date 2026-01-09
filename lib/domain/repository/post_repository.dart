@@ -20,7 +20,7 @@ abstract class PostRepository {
   Future<List<PostEntity>> fetchBookmarkedPosts(String userId);
 
   /// 이미지 업로드
-  Future<String?> uploadImage(File imageFile, String bucket);
+  Future<String?> uploadImage(File imageFile, String bucket, String userId);
 
   /// 새 레시피 게시물 생성
   Future<void> createPost({

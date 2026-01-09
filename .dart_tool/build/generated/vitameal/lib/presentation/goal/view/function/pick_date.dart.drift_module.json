@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/cupertino.dart",
+    "package:vitameal/core/theme/app_theme.dart"
+  ]
+}

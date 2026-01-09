@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:vitameal/core/theme/fixed_colors.dart",
+    "package:vitameal/core/theme/variable_colors.dart"
+  ]
+}

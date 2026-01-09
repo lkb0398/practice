@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:vitameal/data/dto/notifications_dto.dart",
+    "package:vitameal/domain/entity/notifications_entity.dart"
+  ]
+}

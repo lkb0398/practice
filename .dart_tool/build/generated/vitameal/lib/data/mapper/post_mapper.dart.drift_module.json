@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/domain/entity/post_entity.dart",
+    "package:vitameal/data/dto/post_dto.dart",
+    "package:vitameal/data/mapper/recipe_step_mapper.dart"
+  ]
+}

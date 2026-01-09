@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/data/dto/tag_dto.dart",
+    "package:vitameal/data/dto/post_dto.dart"
+  ]
+}

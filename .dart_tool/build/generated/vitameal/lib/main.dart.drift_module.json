@@ -1,0 +1,18 @@
+{
+  "elements": {},
+  "imports": [
+    "package:firebase_core/firebase_core.dart",
+    "package:firebase_messaging/firebase_messaging.dart",
+    "package:flutter_localizations/flutter_localizations.dart",
+    "package:vitameal/core/config/firebase_options.dart",
+    "package:flutter/material.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/core/service/firebase_service.dart",
+    "package:vitameal/core/service/notification_service.dart",
+    "package:vitameal/presentation/ui_provider/profiles_provider.dart",
+    "package:vitameal/core/config/routes.dart"
+  ]
+}

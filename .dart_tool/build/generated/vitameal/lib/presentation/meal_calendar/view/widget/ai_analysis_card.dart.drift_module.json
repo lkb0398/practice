@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:connectivity_plus/connectivity_plus.dart",
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/domain/constants/analysis_policy.dart"
+  ]
+}

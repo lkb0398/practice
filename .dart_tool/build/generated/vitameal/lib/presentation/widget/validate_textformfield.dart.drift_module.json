@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter/services.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/core/theme/app_theme.dart"
+  ]
+}

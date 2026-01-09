@@ -1,0 +1,28 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:go_router/go_router.dart",
+    "package:flutter_riverpod/flutter_riverpod.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/presentation/goal/view/page/add_goal_page.dart",
+    "package:vitameal/presentation/goal/view/page/data_page.dart",
+    "package:vitameal/presentation/goal/view/page/goal_page.dart",
+    "package:vitameal/presentation/home/view/page/home_page.dart",
+    "package:vitameal/presentation/meal_editor/view/meal_editor_page.dart",
+    "package:vitameal/presentation/notification/view/page/notification_page.dart",
+    "package:vitameal/presentation/onboarding/view/page/onboarding_allergy_page.dart",
+    "package:vitameal/presentation/onboarding/view/page/onboarding_disease_page.dart",
+    "package:vitameal/presentation/onboarding/view/page/onboarding_done_page.dart",
+    "package:vitameal/presentation/onboarding/view/page/onboarding_physical_page.dart",
+    "package:vitameal/presentation/onboarding/view/page/onboarding_profile_page.dart",
+    "package:vitameal/presentation/post/view/edit_post.dart",
+    "package:vitameal/presentation/post/view/post_detail_page.dart",
+    "package:vitameal/presentation/post/view/post_page.dart",
+    "package:vitameal/presentation/setting/view/setting_page.dart",
+    "package:vitameal/presentation/splash/view/splash_page.dart",
+    "package:vitameal/presentation/auth/view/login_page.dart",
+    "package:vitameal/presentation/auth/view_model/auth_view_model.dart",
+    "package:vitameal/presentation/intro/view/intro_page.dart"
+  ]
+}

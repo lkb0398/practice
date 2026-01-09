@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:riverpod_annotation/riverpod_annotation.dart","transitive":false},{"uri":"package:vitameal/core/di/provider.dart","transitive":false},{"uri":"package:vitameal/domain/entity/tag_entity.dart","transitive":false}],"elements":[]}

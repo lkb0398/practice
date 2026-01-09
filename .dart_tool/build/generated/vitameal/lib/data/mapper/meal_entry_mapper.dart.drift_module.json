@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:drift/drift.dart",
+    "package:vitameal/data/dto/meal_entry_dto.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/domain/entity/meal_entry_entity.dart",
+    "package:vitameal/domain/enum/meal_category_enum.dart"
+  ]
+}

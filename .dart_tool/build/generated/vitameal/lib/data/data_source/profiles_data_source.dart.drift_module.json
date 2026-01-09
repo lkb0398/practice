@@ -1,0 +1,9 @@
+{
+  "elements": {},
+  "imports": [
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/data/dto/profiles_dto.dart",
+    "package:vitameal/data/mapper/profiles_mapper.dart",
+    "package:vitameal/domain/entity/profiles_entity.dart"
+  ]
+}

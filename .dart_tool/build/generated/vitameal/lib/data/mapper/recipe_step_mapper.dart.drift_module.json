@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/domain/entity/recipe_step_entity.dart",
+    "package:vitameal/data/dto/recipe_step_dto.dart"
+  ]
+}

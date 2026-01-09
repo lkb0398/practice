@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:path/path.dart",
+    "package:uuid/uuid.dart",
+    "package:vitameal/data/data_source/storage_data_source.dart",
+    "package:vitameal/data/util/image_compressor.dart",
+    "package:vitameal/domain/repository/storage_repository.dart"
+  ]
+}

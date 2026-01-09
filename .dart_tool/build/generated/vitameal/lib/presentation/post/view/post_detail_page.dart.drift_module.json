@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart"
+  ]
+}

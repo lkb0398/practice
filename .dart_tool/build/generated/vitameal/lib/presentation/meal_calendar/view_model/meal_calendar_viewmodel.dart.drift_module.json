@@ -1,0 +1,12 @@
+{
+  "elements": {},
+  "imports": [
+    "package:collection/collection.dart",
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/core/util/date_time_utils.dart",
+    "package:vitameal/domain/entity/meal_day_entity.dart",
+    "package:vitameal/domain/enum/adherence_level_enum.dart",
+    "package:vitameal/domain/repository/meal_repository.dart"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:image_picker/image_picker.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:tap_debouncer/tap_debouncer.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/data/data_source/profiles_data_source.dart",
+    "package:vitameal/presentation/widget/button/done_button.dart",
+    "package:vitameal/presentation/widget/validate_textformfield.dart",
+    "package:vitameal/presentation/ui_provider/profiles_provider.dart",
+    "package:vitameal/presentation/onboarding/viewmodel/onboarding_view_model.dart"
+  ]
+}

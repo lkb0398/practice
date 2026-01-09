@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/data/dto/profiles_dto.dart",
+    "package:vitameal/domain/entity/profiles_entity.dart",
+    "package:vitameal/domain/enum/gender_type_enum.dart"
+  ]
+}

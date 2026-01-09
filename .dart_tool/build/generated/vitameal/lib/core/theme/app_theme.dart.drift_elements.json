@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:flutter/material.dart","transitive":false},{"uri":"package:vitameal/core/theme/fixed_colors.dart","transitive":false},{"uri":"package:vitameal/core/theme/variable_colors.dart","transitive":false}],"elements":[]}

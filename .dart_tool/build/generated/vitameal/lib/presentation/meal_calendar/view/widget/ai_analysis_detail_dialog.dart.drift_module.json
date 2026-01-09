@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:vitameal/domain/entity/meal_analysis_entity.dart"
+  ]
+}

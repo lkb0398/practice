@@ -1,0 +1,4 @@
+// ignore_for_file: type=lint
+mixin _$OutboxDaoMixin on DatabaseAccessor<AppDatabase> {
+  $OutboxTable get outbox => attachedDatabase.outbox;
+}

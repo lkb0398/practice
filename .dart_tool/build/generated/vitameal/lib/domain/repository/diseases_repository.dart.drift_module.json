@@ -1,0 +1,6 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/domain/entity/diseases_entity.dart"
+  ]
+}

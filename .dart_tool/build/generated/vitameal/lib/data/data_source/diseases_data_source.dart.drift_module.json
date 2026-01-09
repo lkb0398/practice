@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/data/dto/diseases_dto.dart"
+  ]
+}

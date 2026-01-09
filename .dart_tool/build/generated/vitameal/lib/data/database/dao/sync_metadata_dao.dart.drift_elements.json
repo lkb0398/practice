@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:drift/drift.dart","transitive":false},{"uri":"package:vitameal/data/database/database.dart","transitive":false},{"uri":"package:vitameal/data/database/table/sync_metadata_table.dart","transitive":false}],"elements":[{"kind":"databaseAccessor","name":"SyncMetadataDao","dart_name":"SyncMetadataDao"}]}

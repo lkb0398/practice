@@ -1,0 +1,9 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/data/data_source/goal_datas_data_source.dart",
+    "package:vitameal/domain/entity/goal_datas_entity.dart",
+    "package:vitameal/data/mapper/goal_datas_mapper.dart",
+    "package:vitameal/domain/repository/goal_datas_repository.dart"
+  ]
+}

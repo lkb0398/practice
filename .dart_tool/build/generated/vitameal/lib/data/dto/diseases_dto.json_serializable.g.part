@@ -1,0 +1,9 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_DiseasesDto _$DiseasesDtoFromJson(Map<String, dynamic> json) =>
+    _DiseasesDto(id: (json['id'] as num).toInt(), name: json['name'] as String);
+
+Map<String, dynamic> _$DiseasesDtoToJson(_DiseasesDto instance) =>
+    <String, dynamic>{'id': instance.id, 'name': instance.name};

@@ -1,0 +1,26 @@
+{
+  "elements": {},
+  "imports": [
+    "package:collection/collection.dart",
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:table_calendar/table_calendar.dart",
+    "package:vitameal/core/config/routes.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/presentation/auth/view_model/auth_view_model.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/ai_analysis_card.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/ai_analysis_detail_dialog.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/calendar_header.dart",
+    "package:vitameal/presentation/meal_calendar/view/util/calendar_utils.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/adherence_picker.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/meal_card.dart",
+    "package:vitameal/presentation/meal_calendar/view/widget/meal_calendar.dart",
+    "package:vitameal/presentation/meal_calendar/view/util/adherence_color_utils.dart",
+    "package:vitameal/core/util/date_time_utils.dart",
+    "package:vitameal/presentation/meal_calendar/view_model/meal_analysis_viewmodel.dart",
+    "package:vitameal/presentation/meal_calendar/view_model/meal_calendar_viewmodel.dart",
+    "package:vitameal/presentation/ui_provider/meal_provider.dart"
+  ]
+}

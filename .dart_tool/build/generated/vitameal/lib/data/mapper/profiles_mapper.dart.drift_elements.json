@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:vitameal/data/dto/profiles_dto.dart","transitive":false},{"uri":"package:vitameal/domain/entity/profiles_entity.dart","transitive":false},{"uri":"package:vitameal/domain/enum/gender_type_enum.dart","transitive":false}],"elements":[]}
