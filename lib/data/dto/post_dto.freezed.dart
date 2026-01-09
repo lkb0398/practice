@@ -15,7 +15,9 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PostDto {
 
- String? get id; String get title; String get ingredient;@JsonKey(name: "user_id") String get userId;@JsonKey(name: "image_url") String? get imageUrl;@JsonKey(name: "created_at") DateTime? get createdAt;@JsonKey(name: "selected_tag_ids") List<int>? get selectedTagIds;@JsonKey(name: "recipe_steps") List<RecipeStepDto> get recipeSteps;
+ String? get id; String get title; String get ingredient;@JsonKey(name: "user_id") String get userId;@JsonKey(name: "image_url") String? get imageUrl;@JsonKey(name: "created_at") DateTime? get createdAt;@JsonKey(name: "selected_tag_ids") List<int>? get selectedTagIds;@JsonKey(name: "recipe_steps") List<RecipeStepDto> get recipeSteps;// 🔔 이 부분을 추가해줍니다!
+// Supabase에서 post_bookmarks(user_id)로 가져온 데이터를 담는 그릇입니다.
+@JsonKey(name: "post_bookmarks") List<Map<String, dynamic>> get postBookmarks;
 /// Create a copy of PostDto
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +30,16 @@ $PostDtoCopyWith<PostDto> get copyWith => _$PostDtoCopyWithImpl<PostDto>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDto&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.ingredient, ingredient) || other.ingredient == ingredient)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other.selectedTagIds, selectedTagIds)&&const DeepCollectionEquality().equals(other.recipeSteps, recipeSteps));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDto&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.ingredient, ingredient) || other.ingredient == ingredient)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other.selectedTagIds, selectedTagIds)&&const DeepCollectionEquality().equals(other.recipeSteps, recipeSteps)&&const DeepCollectionEquality().equals(other.postBookmarks, postBookmarks));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,ingredient,userId,imageUrl,createdAt,const DeepCollectionEquality().hash(selectedTagIds),const DeepCollectionEquality().hash(recipeSteps));
+int get hashCode => Object.hash(runtimeType,id,title,ingredient,userId,imageUrl,createdAt,const DeepCollectionEquality().hash(selectedTagIds),const DeepCollectionEquality().hash(recipeSteps),const DeepCollectionEquality().hash(postBookmarks));
 
 @override
 String toString() {
-  return 'PostDto(id: $id, title: $title, ingredient: $ingredient, userId: $userId, imageUrl: $imageUrl, createdAt: $createdAt, selectedTagIds: $selectedTagIds, recipeSteps: $recipeSteps)';
+  return 'PostDto(id: $id, title: $title, ingredient: $ingredient, userId: $userId, imageUrl: $imageUrl, createdAt: $createdAt, selectedTagIds: $selectedTagIds, recipeSteps: $recipeSteps, postBookmarks: $postBookmarks)';
 }
 
 
@@ -48,7 +50,7 @@ abstract mixin class $PostDtoCopyWith<$Res>  {
   factory $PostDtoCopyWith(PostDto value, $Res Function(PostDto) _then) = _$PostDtoCopyWithImpl;
 @useResult
 $Res call({
- String? id, String title, String ingredient,@JsonKey(name: "user_id") String userId,@JsonKey(name: "image_url") String? imageUrl,@JsonKey(name: "created_at") DateTime? createdAt,@JsonKey(name: "selected_tag_ids") List<int>? selectedTagIds,@JsonKey(name: "recipe_steps") List<RecipeStepDto> recipeSteps
+ String? id, String title, String ingredient,@JsonKey(name: "user_id") String userId,@JsonKey(name: "image_url") String? imageUrl,@JsonKey(name: "created_at") DateTime? createdAt,@JsonKey(name: "selected_tag_ids") List<int>? selectedTagIds,@JsonKey(name: "recipe_steps") List<RecipeStepDto> recipeSteps,@JsonKey(name: "post_bookmarks") List<Map<String, dynamic>> postBookmarks
 });
 
 
@@ -65,7 +67,7 @@ class _$PostDtoCopyWithImpl<$Res>
 
 /// Create a copy of PostDto
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? title = null,Object? ingredient = null,Object? userId = null,Object? imageUrl = freezed,Object? createdAt = freezed,Object? selectedTagIds = freezed,Object? recipeSteps = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? title = null,Object? ingredient = null,Object? userId = null,Object? imageUrl = freezed,Object? createdAt = freezed,Object? selectedTagIds = freezed,Object? recipeSteps = null,Object? postBookmarks = null,}) {
   return _then(_self.copyWith(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -75,7 +77,8 @@ as String,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: c
 as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,selectedTagIds: freezed == selectedTagIds ? _self.selectedTagIds : selectedTagIds // ignore: cast_nullable_to_non_nullable
 as List<int>?,recipeSteps: null == recipeSteps ? _self.recipeSteps : recipeSteps // ignore: cast_nullable_to_non_nullable
-as List<RecipeStepDto>,
+as List<RecipeStepDto>,postBookmarks: null == postBookmarks ? _self.postBookmarks : postBookmarks // ignore: cast_nullable_to_non_nullable
+as List<Map<String, dynamic>>,
   ));
 }
 
@@ -160,10 +163,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps, @JsonKey(name: "post_bookmarks")  List<Map<String, dynamic>> postBookmarks)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PostDto() when $default != null:
-return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps);case _:
+return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps,_that.postBookmarks);case _:
   return orElse();
 
 }
@@ -181,10 +184,10 @@ return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUr
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps, @JsonKey(name: "post_bookmarks")  List<Map<String, dynamic>> postBookmarks)  $default,) {final _that = this;
 switch (_that) {
 case _PostDto():
-return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps);case _:
+return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps,_that.postBookmarks);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -201,10 +204,10 @@ return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUr
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String title,  String ingredient, @JsonKey(name: "user_id")  String userId, @JsonKey(name: "image_url")  String? imageUrl, @JsonKey(name: "created_at")  DateTime? createdAt, @JsonKey(name: "selected_tag_ids")  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps")  List<RecipeStepDto> recipeSteps, @JsonKey(name: "post_bookmarks")  List<Map<String, dynamic>> postBookmarks)?  $default,) {final _that = this;
 switch (_that) {
 case _PostDto() when $default != null:
-return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps);case _:
+return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUrl,_that.createdAt,_that.selectedTagIds,_that.recipeSteps,_that.postBookmarks);case _:
   return null;
 
 }
@@ -216,7 +219,7 @@ return $default(_that.id,_that.title,_that.ingredient,_that.userId,_that.imageUr
 @JsonSerializable()
 
 class _PostDto implements PostDto {
-  const _PostDto({this.id, required this.title, required this.ingredient, @JsonKey(name: "user_id") required this.userId, @JsonKey(name: "image_url") this.imageUrl, @JsonKey(name: "created_at") this.createdAt, @JsonKey(name: "selected_tag_ids") final  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps") final  List<RecipeStepDto> recipeSteps = const []}): _selectedTagIds = selectedTagIds,_recipeSteps = recipeSteps;
+  const _PostDto({this.id, required this.title, required this.ingredient, @JsonKey(name: "user_id") required this.userId, @JsonKey(name: "image_url") this.imageUrl, @JsonKey(name: "created_at") this.createdAt, @JsonKey(name: "selected_tag_ids") final  List<int>? selectedTagIds, @JsonKey(name: "recipe_steps") final  List<RecipeStepDto> recipeSteps = const [], @JsonKey(name: "post_bookmarks") final  List<Map<String, dynamic>> postBookmarks = const []}): _selectedTagIds = selectedTagIds,_recipeSteps = recipeSteps,_postBookmarks = postBookmarks;
   factory _PostDto.fromJson(Map<String, dynamic> json) => _$PostDtoFromJson(json);
 
 @override final  String? id;
@@ -241,6 +244,17 @@ class _PostDto implements PostDto {
   return EqualUnmodifiableListView(_recipeSteps);
 }
 
+// 🔔 이 부분을 추가해줍니다!
+// Supabase에서 post_bookmarks(user_id)로 가져온 데이터를 담는 그릇입니다.
+ final  List<Map<String, dynamic>> _postBookmarks;
+// 🔔 이 부분을 추가해줍니다!
+// Supabase에서 post_bookmarks(user_id)로 가져온 데이터를 담는 그릇입니다.
+@override@JsonKey(name: "post_bookmarks") List<Map<String, dynamic>> get postBookmarks {
+  if (_postBookmarks is EqualUnmodifiableListView) return _postBookmarks;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_postBookmarks);
+}
+
 
 /// Create a copy of PostDto
 /// with the given fields replaced by the non-null parameter values.
@@ -255,16 +269,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDto&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.ingredient, ingredient) || other.ingredient == ingredient)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other._selectedTagIds, _selectedTagIds)&&const DeepCollectionEquality().equals(other._recipeSteps, _recipeSteps));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDto&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.ingredient, ingredient) || other.ingredient == ingredient)&&(identical(other.userId, userId) || other.userId == userId)&&(identical(other.imageUrl, imageUrl) || other.imageUrl == imageUrl)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&const DeepCollectionEquality().equals(other._selectedTagIds, _selectedTagIds)&&const DeepCollectionEquality().equals(other._recipeSteps, _recipeSteps)&&const DeepCollectionEquality().equals(other._postBookmarks, _postBookmarks));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,ingredient,userId,imageUrl,createdAt,const DeepCollectionEquality().hash(_selectedTagIds),const DeepCollectionEquality().hash(_recipeSteps));
+int get hashCode => Object.hash(runtimeType,id,title,ingredient,userId,imageUrl,createdAt,const DeepCollectionEquality().hash(_selectedTagIds),const DeepCollectionEquality().hash(_recipeSteps),const DeepCollectionEquality().hash(_postBookmarks));
 
 @override
 String toString() {
-  return 'PostDto(id: $id, title: $title, ingredient: $ingredient, userId: $userId, imageUrl: $imageUrl, createdAt: $createdAt, selectedTagIds: $selectedTagIds, recipeSteps: $recipeSteps)';
+  return 'PostDto(id: $id, title: $title, ingredient: $ingredient, userId: $userId, imageUrl: $imageUrl, createdAt: $createdAt, selectedTagIds: $selectedTagIds, recipeSteps: $recipeSteps, postBookmarks: $postBookmarks)';
 }
 
 
@@ -275,7 +289,7 @@ abstract mixin class _$PostDtoCopyWith<$Res> implements $PostDtoCopyWith<$Res> {
   factory _$PostDtoCopyWith(_PostDto value, $Res Function(_PostDto) _then) = __$PostDtoCopyWithImpl;
 @override @useResult
 $Res call({
- String? id, String title, String ingredient,@JsonKey(name: "user_id") String userId,@JsonKey(name: "image_url") String? imageUrl,@JsonKey(name: "created_at") DateTime? createdAt,@JsonKey(name: "selected_tag_ids") List<int>? selectedTagIds,@JsonKey(name: "recipe_steps") List<RecipeStepDto> recipeSteps
+ String? id, String title, String ingredient,@JsonKey(name: "user_id") String userId,@JsonKey(name: "image_url") String? imageUrl,@JsonKey(name: "created_at") DateTime? createdAt,@JsonKey(name: "selected_tag_ids") List<int>? selectedTagIds,@JsonKey(name: "recipe_steps") List<RecipeStepDto> recipeSteps,@JsonKey(name: "post_bookmarks") List<Map<String, dynamic>> postBookmarks
 });
 
 
@@ -292,7 +306,7 @@ class __$PostDtoCopyWithImpl<$Res>
 
 /// Create a copy of PostDto
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? title = null,Object? ingredient = null,Object? userId = null,Object? imageUrl = freezed,Object? createdAt = freezed,Object? selectedTagIds = freezed,Object? recipeSteps = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? title = null,Object? ingredient = null,Object? userId = null,Object? imageUrl = freezed,Object? createdAt = freezed,Object? selectedTagIds = freezed,Object? recipeSteps = null,Object? postBookmarks = null,}) {
   return _then(_PostDto(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
@@ -302,7 +316,8 @@ as String,imageUrl: freezed == imageUrl ? _self.imageUrl : imageUrl // ignore: c
 as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,selectedTagIds: freezed == selectedTagIds ? _self._selectedTagIds : selectedTagIds // ignore: cast_nullable_to_non_nullable
 as List<int>?,recipeSteps: null == recipeSteps ? _self._recipeSteps : recipeSteps // ignore: cast_nullable_to_non_nullable
-as List<RecipeStepDto>,
+as List<RecipeStepDto>,postBookmarks: null == postBookmarks ? _self._postBookmarks : postBookmarks // ignore: cast_nullable_to_non_nullable
+as List<Map<String, dynamic>>,
   ));
 }
 

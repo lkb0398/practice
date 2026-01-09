@@ -19,6 +19,11 @@ _PostDto _$PostDtoFromJson(Map<String, dynamic> json) => _PostDto(
           ?.map((e) => RecipeStepDto.fromJson(e as Map<String, dynamic>))
           .toList() ??
       const [],
+  postBookmarks:
+      (json['post_bookmarks'] as List<dynamic>?)
+          ?.map((e) => e as Map<String, dynamic>)
+          .toList() ??
+      const [],
 );
 
 Map<String, dynamic> _$PostDtoToJson(_PostDto instance) => <String, dynamic>{
@@ -30,4 +35,5 @@ Map<String, dynamic> _$PostDtoToJson(_PostDto instance) => <String, dynamic>{
   'created_at': instance.createdAt?.toIso8601String(),
   'selected_tag_ids': instance.selectedTagIds,
   'recipe_steps': instance.recipeSteps,
+  'post_bookmarks': instance.postBookmarks,
 };

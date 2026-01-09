@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:flutter/material.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:vitameal/data/dto/tag_dto.dart';
 import '../dto/post_dto.dart';
@@ -35,7 +36,11 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   Future<List<PostDto>> fetchPosts({required int from, required int to}) async {
     final response = await _client
         .from('posts')
-        .select('*, recipe_steps(*), post_bookmarks(user_id)')
+        .select('''
+        *, 
+        recipe_steps(*), 
+        post_bookmarks(user_id)
+      ''') // 🔔 post_bookmarks 테이블에서 user_id만 쏙 빼오겠다는 뜻입니다.
         .order('created_at', ascending: false)
         .range(from, to);
     return (response as List).map((json) => PostDto.fromJson(json)).toList();
