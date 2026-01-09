@@ -126,12 +126,24 @@ class PostPage extends HookConsumerWidget {
                           children: [
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
-                              child: post.imageUrl != null
+                              child:
+                                  post.imageUrl != null &&
+                                      post.imageUrl!.isNotEmpty
                                   ? Image.network(
                                       post.imageUrl!,
                                       width: 96,
                                       height: 96,
                                       fit: BoxFit.cover,
+                                      // 🔔 에러 발생 시(400 에러 포함) 보여줄 기본 이미지 설정
+                                      errorBuilder:
+                                          (context, error, stackTrace) {
+                                            return Image.asset(
+                                              "assets/images/profile2.png",
+                                              width: 96,
+                                              height: 96,
+                                              fit: BoxFit.cover,
+                                            );
+                                          },
                                     )
                                   : Image.asset(
                                       "assets/images/profile_image.webp",

@@ -29,8 +29,8 @@ class PostRepositoryImpl implements PostRepository {
   }) async {
     final dtos = await _dataSource.fetchPosts(from: from, to: to);
     return dtos.map((dto) {
-      final bookmarks = (dto as dynamic).bookmarks as List?;
-      final isMine = bookmarks?.any((b) => b['user_id'] == userId) ?? false;
+      // 🔔 1단계에서 추가한 postBookmarks 리스트에 내 userId가 있는지 확인합니다.
+      final isMine = dto.postBookmarks.any((b) => b['user_id'] == userId);
       return dto.toEntity(isBookmarked: isMine);
     }).toList();
   }

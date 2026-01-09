@@ -15,6 +15,12 @@ abstract class PostDto with _$PostDto {
     @JsonKey(name: "created_at") DateTime? createdAt,
     @JsonKey(name: "selected_tag_ids") List<int>? selectedTagIds,
     @JsonKey(name: "recipe_steps") @Default([]) List<RecipeStepDto> recipeSteps,
+
+    // 🔔 이 부분을 추가해줍니다!
+    // Supabase에서 post_bookmarks(user_id)로 가져온 데이터를 담는 그릇입니다.
+    @JsonKey(name: "post_bookmarks")
+    @Default([])
+    List<Map<String, dynamic>> postBookmarks,
   }) = _PostDto;
 
   factory PostDto.fromJson(Map<String, dynamic> json) =>
