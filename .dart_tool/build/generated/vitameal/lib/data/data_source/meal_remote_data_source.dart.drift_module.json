@@ -1,0 +1,14 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/foundation.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/data/dto/meal_day_dto.dart",
+    "package:vitameal/data/dto/meal_entry_dto.dart",
+    "package:vitameal/data/mapper/meal_day_mapper.dart",
+    "package:vitameal/data/mapper/meal_entry_mapper.dart",
+    "package:vitameal/domain/entity/meal_day_entity.dart",
+    "package:vitameal/domain/entity/meal_entry_entity.dart",
+    "package:vitameal/domain/enum/adherence_level_enum.dart"
+  ]
+}

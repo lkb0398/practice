@@ -1,0 +1,29 @@
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_MealEntryDto _$MealEntryDtoFromJson(Map<String, dynamic> json) =>
+    _MealEntryDto(
+      id: json['id'] as String,
+      mealDayId: json['meal_day_id'] as String,
+      category: json['category'] as String,
+      content: json['content'] as String?,
+      photoUrl: json['photo_url'] as String?,
+      eatenAt: json['eaten_at'] as String?,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
+      deletedAt: json['deleted_at'] as String?,
+    );
+
+Map<String, dynamic> _$MealEntryDtoToJson(_MealEntryDto instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'meal_day_id': instance.mealDayId,
+      'category': instance.category,
+      'content': instance.content,
+      'photo_url': instance.photoUrl,
+      'eaten_at': instance.eatenAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
+      'deleted_at': instance.deletedAt,
+    };

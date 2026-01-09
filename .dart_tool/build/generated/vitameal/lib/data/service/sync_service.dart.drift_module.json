@@ -1,0 +1,15 @@
+{
+  "elements": {},
+  "imports": [
+    "package:connectivity_plus/connectivity_plus.dart",
+    "package:flutter/foundation.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/core/util/date_time_utils.dart",
+    "package:vitameal/data/data_source/meal_remote_data_source.dart",
+    "package:vitameal/data/dto/meal_day_dto.dart",
+    "package:vitameal/data/dto/meal_entry_dto.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/data/mapper/meal_day_mapper.dart",
+    "package:vitameal/data/mapper/meal_entry_mapper.dart"
+  ]
+}

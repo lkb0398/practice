@@ -1,0 +1,9 @@
+{
+  "elements": {},
+  "imports": [
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/domain/entity/meal_analysis_entity.dart",
+    "package:vitameal/domain/repository/meal_analysis_repository.dart"
+  ]
+}

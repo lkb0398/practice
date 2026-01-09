@@ -1,0 +1,12 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/presentation/home/view/widget/custom_bottomnavi.dart",
+    "package:vitameal/presentation/info/view/page/info_page.dart",
+    "package:vitameal/presentation/meal_calendar/view/meal_calendar_page.dart",
+    "package:vitameal/presentation/post/view/post_page.dart",
+    "package:vitameal/presentation/ui_provider/home_tab_provider.dart"
+  ]
+}

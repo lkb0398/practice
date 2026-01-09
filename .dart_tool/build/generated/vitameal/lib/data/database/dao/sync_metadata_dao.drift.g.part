@@ -1,0 +1,4 @@
+// ignore_for_file: type=lint
+mixin _$SyncMetadataDaoMixin on DatabaseAccessor<AppDatabase> {
+  $SyncMetadataTable get syncMetadata => attachedDatabase.syncMetadata;
+}

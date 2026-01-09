@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/data/data_source/allergies_data_source.dart",
+    "package:vitameal/data/data_source/user_allergies_data_source.dart",
+    "package:vitameal/domain/repository/user_allergies_repository.dart"
+  ]
+}

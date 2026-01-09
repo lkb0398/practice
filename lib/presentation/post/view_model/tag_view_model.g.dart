@@ -46,4 +46,4 @@ final class AllTagsProvider
   }
 }
 
-String _$allTagsHash() => r'0a0b122526d3c051a2ca69be51ca73e353ac475d';
+String _$allTagsHash() => r'474e9fc200afc7bdb4eb2850ff0816b22f41c295';

@@ -1,0 +1,12 @@
+{
+  "elements": {},
+  "imports": [
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/core/config/routes.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/domain/entity/allergies_entity.dart",
+    "package:vitameal/domain/entity/diseases_entity.dart",
+    "package:vitameal/domain/entity/profiles_entity.dart"
+  ]
+}

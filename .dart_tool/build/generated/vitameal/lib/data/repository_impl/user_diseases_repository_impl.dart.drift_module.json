@@ -1,0 +1,8 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/data/data_source/diseases_data_source.dart",
+    "package:vitameal/data/data_source/user_diseases_data_source.dart",
+    "package:vitameal/domain/repository/user_diseases_repository.dart"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter_hooks/flutter_hooks.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/core/config/routes.dart",
+    "package:vitameal/presentation/intro/model/intro_content.dart",
+    "package:vitameal/presentation/intro/view/widgets/intro_controls.dart",
+    "package:vitameal/presentation/intro/view/widgets/intro_item.dart"
+  ]
+}

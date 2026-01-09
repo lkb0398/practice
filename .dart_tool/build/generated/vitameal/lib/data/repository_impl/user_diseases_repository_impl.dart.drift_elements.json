@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:vitameal/data/data_source/diseases_data_source.dart","transitive":false},{"uri":"package:vitameal/data/data_source/user_diseases_data_source.dart","transitive":false},{"uri":"package:vitameal/domain/repository/user_diseases_repository.dart","transitive":false}],"elements":[]}

@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:vitameal/data/data_source/allergies_data_source.dart","transitive":false},{"uri":"package:vitameal/data/data_source/user_allergies_data_source.dart","transitive":false},{"uri":"package:vitameal/domain/repository/user_allergies_repository.dart","transitive":false}],"elements":[]}

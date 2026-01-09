@@ -1,0 +1,12 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/presentation/onboarding/viewmodel/onboarding_view_model.dart",
+    "package:vitameal/presentation/ui_provider/profiles_provider.dart",
+    "package:vitameal/presentation/widget/button/done_button.dart"
+  ]
+}

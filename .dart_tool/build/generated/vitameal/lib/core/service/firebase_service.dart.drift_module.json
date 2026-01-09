@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:firebase_messaging/firebase_messaging.dart",
+    "package:supabase_flutter/supabase_flutter.dart"
+  ]
+}

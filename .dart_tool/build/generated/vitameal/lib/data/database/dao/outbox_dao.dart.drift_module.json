@@ -1,0 +1,53 @@
+{
+  "elements": {
+    "OutboxDao": {
+      "id": {
+        "library_uri": "package:vitameal/data/database/dao/outbox_dao.dart",
+        "name": "OutboxDao"
+      },
+      "declaration": {
+        "source_uri": "package:vitameal/data/database/dao/outbox_dao.dart",
+        "offset": 291,
+        "name": "OutboxDao"
+      },
+      "references": [
+        {
+          "library_uri": "package:vitameal/data/database/table/outbox_table.dart",
+          "name": "outbox"
+        }
+      ],
+      "type": "dao",
+      "tables": [
+        {
+          "library_uri": "package:vitameal/data/database/table/outbox_table.dart",
+          "name": "outbox"
+        }
+      ],
+      "views": [],
+      "includes": [],
+      "queries": [],
+      "dart_type": {
+        "elements": [
+          {
+            "lexeme": "OutboxDao",
+            "import_uri": "package:vitameal/data/database/dao/outbox_dao.dart"
+          }
+        ]
+      },
+      "database": {
+        "elements": [
+          {
+            "lexeme": "AppDatabase",
+            "import_uri": "package:vitameal/data/database/database.dart"
+          }
+        ]
+      }
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:flutter/foundation.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/data/database/table/outbox_table.dart"
+  ]
+}

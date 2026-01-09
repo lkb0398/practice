@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:flutter/material.dart","transitive":false},{"uri":"package:flutter_svg/flutter_svg.dart","transitive":false},{"uri":"package:vitameal/core/theme/app_theme.dart","transitive":false},{"uri":"package:vitameal/presentation/intro/model/intro_content.dart","transitive":false}],"elements":[]}

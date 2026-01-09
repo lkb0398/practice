@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:freezed_annotation/freezed_annotation.dart",
+    "package:vitameal/domain/entity/recipe_step_entity.dart"
+  ]
+}

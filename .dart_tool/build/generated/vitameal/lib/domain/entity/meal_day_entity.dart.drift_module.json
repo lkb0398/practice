@@ -1,0 +1,7 @@
+{
+  "elements": {},
+  "imports": [
+    "package:freezed_annotation/freezed_annotation.dart",
+    "package:vitameal/domain/enum/adherence_level_enum.dart"
+  ]
+}

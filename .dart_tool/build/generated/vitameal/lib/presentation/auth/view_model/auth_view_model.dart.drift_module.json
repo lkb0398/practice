@@ -1,0 +1,10 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/foundation.dart",
+    "package:riverpod_annotation/riverpod_annotation.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/core/di/provider.dart",
+    "package:vitameal/core/service/firebase_service.dart"
+  ]
+}

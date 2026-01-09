@@ -1,0 +1,52 @@
+{
+  "elements": {
+    "SyncMetadataDao": {
+      "id": {
+        "library_uri": "package:vitameal/data/database/dao/sync_metadata_dao.dart",
+        "name": "SyncMetadataDao"
+      },
+      "declaration": {
+        "source_uri": "package:vitameal/data/database/dao/sync_metadata_dao.dart",
+        "offset": 267,
+        "name": "SyncMetadataDao"
+      },
+      "references": [
+        {
+          "library_uri": "package:vitameal/data/database/table/sync_metadata_table.dart",
+          "name": "sync_metadata"
+        }
+      ],
+      "type": "dao",
+      "tables": [
+        {
+          "library_uri": "package:vitameal/data/database/table/sync_metadata_table.dart",
+          "name": "sync_metadata"
+        }
+      ],
+      "views": [],
+      "includes": [],
+      "queries": [],
+      "dart_type": {
+        "elements": [
+          {
+            "lexeme": "SyncMetadataDao",
+            "import_uri": "package:vitameal/data/database/dao/sync_metadata_dao.dart"
+          }
+        ]
+      },
+      "database": {
+        "elements": [
+          {
+            "lexeme": "AppDatabase",
+            "import_uri": "package:vitameal/data/database/database.dart"
+          }
+        ]
+      }
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/data/database/table/sync_metadata_table.dart"
+  ]
+}

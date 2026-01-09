@@ -1,0 +1,11 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:go_router/go_router.dart",
+    "package:supabase_flutter/supabase_flutter.dart",
+    "package:vitameal/presentation/info/view/widget/view_goal.dart",
+    "package:vitameal/presentation/info/view/widget/view_info.dart",
+    "package:vitameal/presentation/home/view/widget/custom_appbar.dart"
+  ]
+}

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
+import 'package:vitameal/presentation/ui_provider/profiles_provider.dart';
 import '../../../domain/entity/post_entity.dart';
 import '../../../core/di/provider.dart';
 
@@ -14,6 +15,7 @@ class PostViewModel extends _$PostViewModel {
 
   @override
   Future<List<PostEntity>> build() async {
+    ref.watch(userIdProvider);
     // 초기 데이터 로드 (0번 페이지)
     return await _fetchPosts(0);
   }
@@ -52,8 +54,8 @@ class PostViewModel extends _$PostViewModel {
 
   /// 북마크 토글 (낙관적 업데이트 적용)
   Future<void> toggleBookmark(String postId) async {
+    final userId = ref.read(userIdProvider);
     final repository = ref.read(postRepositoryProvider);
-    const userId = "test_user_id";
 
     final previousState = state.value ?? [];
 
@@ -84,18 +86,28 @@ class PostViewModel extends _$PostViewModel {
     required List<int> selectedTagIds,
     required List<Map<String, dynamic>> steps,
   }) async {
+    // 필수 데이터 검증
+    if (title.trim().isEmpty || ingredient.trim().isEmpty) {
+      throw Exception('제목과 재료를 모두 입력해주세요.');
+    }
+
     state = const AsyncValue.loading();
     final repository = ref.read(postRepositoryProvider);
-    const userId = "test_user_id";
+    final userId = ref.read(userIdProvider);
 
     try {
-      // 1. 메인 이미지 업로드
+      // 1. 대표 이미지 업로드 (PostRepositoryImpl의 post_images 경로 활용)
       String? imageUrl;
       if (imageFile != null) {
-        imageUrl = await repository.uploadImage(imageFile, "images");
+        // bucket 이름은 Supabase 설정에 맞춰 'meal-images' 혹은 'posts'로 확인 필요
+        imageUrl = await repository.uploadImage(
+          imageFile,
+          "post-images",
+          userId,
+        );
       }
 
-      // 2. 레시피 생성
+      // 2. 게시글 및 레시피 단계 생성
       await repository.createPost(
         title: title,
         ingredient: ingredient,
@@ -105,7 +117,7 @@ class PostViewModel extends _$PostViewModel {
         steps: steps,
       );
 
-      // 3. 성공 시 초기화 및 새로고침
+      // 3. 성공 시 상태 초기화 및 목록 새로고침
       _currentPage = 0;
       _hasNextPage = true;
       ref.invalidateSelf();

@@ -1,0 +1,14 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter_slidable/flutter_slidable.dart",
+    "package:go_router/go_router.dart",
+    "package:hooks_riverpod/hooks_riverpod.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/presentation/goal/view_model/goals_view_model.dart",
+    "package:vitameal/presentation/ui_provider/goals_provider.dart",
+    "package:vitameal/presentation/widget/button/add_button.dart",
+    "package:vitameal/presentation/widget/dialog/custom_dialog.dart"
+  ]
+}

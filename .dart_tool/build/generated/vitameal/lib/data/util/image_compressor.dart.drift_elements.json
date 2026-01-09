@@ -1,0 +1,1 @@
+{"valid_import":true,"imports":[{"uri":"package:flutter/foundation.dart","transitive":false},{"uri":"package:flutter_image_compress/flutter_image_compress.dart","transitive":false},{"uri":"package:path/path.dart","transitive":false},{"uri":"package:path_provider/path_provider.dart","transitive":false}],"elements":[]}

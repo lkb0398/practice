@@ -1,0 +1,9 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/data/data_source/profiles_data_source.dart",
+    "package:vitameal/data/mapper/profiles_mapper.dart",
+    "package:vitameal/domain/entity/profiles_entity.dart",
+    "package:vitameal/domain/repository/profiles_repository.dart"
+  ]
+}

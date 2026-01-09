@@ -1,0 +1,6 @@
+{
+  "elements": {},
+  "imports": [
+    "package:vitameal/domain/entity/notifications_entity.dart"
+  ]
+}

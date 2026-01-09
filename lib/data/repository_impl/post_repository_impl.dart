@@ -63,9 +63,13 @@ class PostRepositoryImpl implements PostRepository {
   }
 
   @override
-  Future<String?> uploadImage(File imageFile, String bucket) async {
+  Future<String?> uploadImage(
+    File imageFile,
+    String bucket,
+    String userId,
+  ) async {
     final fileName = '${DateTime.now().millisecondsSinceEpoch}.png';
-    final path = 'post_images/$fileName';
+    final path = '$userId/$fileName';
     return await _dataSource.uploadImage(imageFile, bucket, path);
   }
 

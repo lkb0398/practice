@@ -1,0 +1,84 @@
+{
+  "elements": {
+    "AppDatabase": {
+      "id": {
+        "library_uri": "package:vitameal/data/database/database.dart",
+        "name": "AppDatabase"
+      },
+      "declaration": {
+        "source_uri": "package:vitameal/data/database/database.dart",
+        "offset": 796,
+        "name": "AppDatabase"
+      },
+      "references": [
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_days_table.dart",
+          "name": "meal_days"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_entries_table.dart",
+          "name": "meal_entries"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/outbox_table.dart",
+          "name": "outbox"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/sync_metadata_table.dart",
+          "name": "sync_metadata"
+        }
+      ],
+      "type": "database",
+      "tables": [
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_days_table.dart",
+          "name": "meal_days"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/meal_entries_table.dart",
+          "name": "meal_entries"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/outbox_table.dart",
+          "name": "outbox"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/table/sync_metadata_table.dart",
+          "name": "sync_metadata"
+        }
+      ],
+      "views": [],
+      "includes": [],
+      "queries": [],
+      "schema_version": 1,
+      "daos": [
+        {
+          "library_uri": "package:vitameal/data/database/dao/meal_dao.dart",
+          "name": "MealDao"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/dao/outbox_dao.dart",
+          "name": "OutboxDao"
+        },
+        {
+          "library_uri": "package:vitameal/data/database/dao/sync_metadata_dao.dart",
+          "name": "SyncMetadataDao"
+        }
+      ],
+      "has_constructor_arg": false
+    }
+  },
+  "imports": [
+    "package:drift/drift.dart",
+    "package:drift/native.dart",
+    "package:path_provider/path_provider.dart",
+    "package:path/path.dart",
+    "package:vitameal/data/database/dao/meal_dao.dart",
+    "package:vitameal/data/database/dao/outbox_dao.dart",
+    "package:vitameal/data/database/dao/sync_metadata_dao.dart",
+    "package:vitameal/data/database/table/meal_days_table.dart",
+    "package:vitameal/data/database/table/meal_entries_table.dart",
+    "package:vitameal/data/database/table/outbox_table.dart",
+    "package:vitameal/data/database/table/sync_metadata_table.dart"
+  ]
+}

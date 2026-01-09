@@ -1,0 +1,17 @@
+{
+  "elements": {},
+  "imports": [
+    "package:drift/drift.dart",
+    "package:uuid/uuid.dart",
+    "package:vitameal/data/data_source/meal_local_data_source.dart",
+    "package:vitameal/data/database/database.dart",
+    "package:vitameal/data/mapper/meal_day_mapper.dart",
+    "package:vitameal/data/mapper/meal_entry_mapper.dart",
+    "package:vitameal/data/service/sync_service.dart",
+    "package:vitameal/domain/entity/meal_day_entity.dart",
+    "package:vitameal/domain/entity/meal_entry_entity.dart",
+    "package:vitameal/domain/enum/adherence_level_enum.dart",
+    "package:vitameal/domain/enum/meal_category_enum.dart",
+    "package:vitameal/domain/repository/meal_repository.dart"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "elements": {},
+  "imports": [
+    "package:flutter/material.dart",
+    "package:flutter_svg/flutter_svg.dart",
+    "package:vitameal/core/theme/app_theme.dart",
+    "package:vitameal/presentation/intro/model/intro_content.dart"
+  ]
+}
